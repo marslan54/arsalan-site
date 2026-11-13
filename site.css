@@ -326,6 +326,48 @@ button { font: inherit; }
 .tools.big .chip { font-size: 14px; padding: 7px 14px; background: var(--soft); }
 .tool-row:nth-child(odd) .tools.big .chip:first-child { background: var(--yellow); }
 
+/* ---------- pricing ---------- */
+.pricing { max-width: 1300px; margin: 0 auto; padding: 110px 20px 0; }
+.price-card { background: var(--ink); color: var(--white); border-radius: 26px; padding: 56px 64px; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 32px 56px; align-items: center; }
+.price-left h2 { font-weight: 400; font-size: 20px; color: var(--yellow); }
+.price-big { margin-top: 14px; font-size: clamp(2.4rem, 4.6vw, 4rem); line-height: 1.05; letter-spacing: -0.035em; }
+.price-tag { display: inline-block; background: var(--yellow); color: var(--ink); border-radius: 18px; padding: 0 .18em; }
+.price-note { margin-top: 18px; color: var(--on-dark); font-weight: 300; max-width: 46ch; }
+.price-list { list-style: none; padding: 0; display: grid; gap: 14px; }
+.price-list li { display: flex; gap: 12px; align-items: flex-start; font-size: 16px; }
+.tick-dot { flex: none; width: 24px; height: 24px; border-radius: 50%; background: var(--yellow); color: var(--ink); display: grid; place-items: center; font-size: 12px; font-weight: 600; }
+.price-actions { grid-column: 1 / -1; display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+.price-actions .pill { padding: 16px 28px; font-size: 16px; }
+
+/* ---------- faq ---------- */
+.faq { max-width: 1100px; margin: 0 auto; padding: 120px 40px 20px; }
+.faq > h2 { font-weight: 400; font-size: clamp(2rem, 3.6vw, 3.25rem); letter-spacing: -0.03em; text-align: center; }
+.qs { margin-top: 44px; display: grid; gap: 12px; }
+.qs details { background: var(--white); border-radius: 18px; padding: 4px 26px; transition: box-shadow .25s var(--ease); }
+.qs details[open] { box-shadow: var(--shadow); }
+.qs summary { list-style: none; cursor: pointer; position: relative; padding: 20px 44px 20px 0; font-size: 19px; font-weight: 500; }
+.qs summary::-webkit-details-marker { display: none; }
+.qs summary::after { content: "+"; position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; background: var(--yellow); display: grid; place-items: center; font-size: 20px; font-weight: 400; transition: transform .25s var(--ease); }
+.qs details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+.qs details p { padding: 0 0 22px; line-height: 1.6; color: #3E3D44; max-width: 70ch; }
+.qs details a { font-weight: 500; }
+
+/* ---------- privacy page ---------- */
+.yellow-inline { color: var(--yellow); }
+.legal-lede { margin-top: 18px; }
+.legal { max-width: 780px; margin: 0 auto; padding: 90px 24px 100px; display: grid; gap: 44px; }
+.legal h2 { font-weight: 500; font-size: 26px; letter-spacing: -0.02em; }
+.legal p, .legal li { line-height: 1.65; color: #34333A; }
+.legal p { margin-top: 12px; }
+.legal ul { margin-top: 12px; padding-left: 20px; display: grid; gap: 8px; }
+.legal a { font-weight: 500; }
+.footer-solo { border-radius: 22px; border-top: 0; }
+
+/* ---------- 404 ---------- */
+.nf { min-height: calc(100vh - 20px); display: flex; flex-direction: column; }
+.nf .hero-in { flex: 1; display: flex; flex-direction: column; justify-content: center; padding-bottom: 80px; }
+.nf .hero-actions { margin-top: 30px; }
+
 /* ---------- CTA and footer ---------- */
 .cta-wrap { max-width: 1300px; margin: 80px auto 0; padding: 0 20px; }
 .cta { background: var(--ink); color: var(--white); border-radius: 22px 22px 0 0; padding: 70px 64px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 40px; align-items: center; }
@@ -461,6 +503,13 @@ button { font: inherit; }
   .build-chip { font-size: 11px; padding: 6px 10px; }
   .wp-chip { display: none; }
   .browser-bar em { display: none; }
+  .pricing { padding: 64px 0 0; }
+  .price-card { grid-template-columns: 1fr; padding: 32px 22px; border-radius: 22px; }
+  .price-actions { flex-direction: column; align-items: stretch; gap: 14px; text-align: center; }
+  .faq { padding: 72px 8px 8px; }
+  .qs details { padding: 2px 18px; }
+  .qs summary { font-size: 17px; }
+  .legal { padding: 56px 12px 64px; gap: 34px; }
   .reviews { padding: 72px 8px 8px; }
   .reviews-grid { grid-template-columns: 1fr; gap: 12px; margin-top: 32px; }
   .review, .review-badge, .review-try { padding: 24px 22px; }
