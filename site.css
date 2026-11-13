@@ -170,6 +170,31 @@ button { font: inherit; }
 .arrow-circle { width: 150px; height: 150px; border-radius: 50%; background: #E8E4DB; display: grid; place-items: center; }
 .creds { margin: 40px auto 0; max-width: 760px; text-align: center; font-size: 14px; color: var(--muted); line-height: 1.6; }
 
+/* ---------- AI agent illustration (section 01) ---------- */
+.agent-art { position: relative; display: block; aspect-ratio: 4 / 3; background: var(--ink); border-radius: 22px; overflow: hidden; text-decoration: none; color: var(--white); box-shadow: 0 30px 60px -36px rgba(0, 0, 0, .5); }
+.agent-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.agent-svg .ring { transform-origin: 280px 190px; }
+.agent-svg .r1 { animation: spinSlow 40s linear infinite; }
+.agent-svg .r2 { animation: spinSlow 60s linear infinite reverse; }
+.agent-svg .eyes { transform-origin: 280px 187px; animation: blink 5s ease-in-out infinite; }
+.agent-svg .antenna { animation: pulse 1.6s ease-in-out infinite; }
+.agent-svg .wave rect { transform-box: fill-box; transform-origin: center; animation: talk 1.1s ease-in-out infinite; }
+.agent-svg .wave rect:nth-child(2n) { animation-delay: -.3s; }
+.agent-svg .wave rect:nth-child(3n) { animation-delay: -.6s; }
+.agent-svg .wave rect:nth-child(5n) { animation-delay: -.15s; }
+.agent-chip { position: absolute; display: inline-flex; align-items: center; gap: 7px; background: var(--white); color: var(--ink); border-radius: 999px; padding: 8px 14px; font-size: 13px; font-weight: 500; white-space: nowrap; box-shadow: var(--shadow); animation: floaty 6s ease-in-out infinite; }
+.agent-chip.yellow { background: var(--yellow); }
+.chip-a { left: 5%; top: 7%; }
+.chip-b { right: 5%; top: 16%; animation-delay: -1.5s; }
+.chip-c { left: 4%; bottom: 26%; animation-delay: -3s; }
+.chip-d { right: 4%; bottom: 20%; animation-delay: -4.5s; }
+.agent-cta { position: absolute; left: 50%; bottom: 5%; transform: translateX(-50%); font-size: 14px; font-weight: 500; color: var(--on-dark); white-space: nowrap; }
+.agent-art:hover .agent-cta { color: var(--yellow); }
+@keyframes spinSlow { to { transform: rotate(360deg); } }
+@keyframes blink { 0%, 92%, 100% { transform: scaleY(1); } 95% { transform: scaleY(.1); } }
+@keyframes talk { 0%, 100% { transform: scaleY(.45); } 50% { transform: scaleY(1); } }
+@keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+
 /* ---------- reviews ---------- */
 .reviews { max-width: 1240px; margin: 0 auto; padding: 120px 40px 20px; }
 .reviews-head { text-align: center; }
@@ -240,7 +265,7 @@ button { font: inherit; }
   html { scroll-behavior: auto; }
   .js .ltr, .js .anim-nav, .js .anim-load, .js .anim-card { animation: none; opacity: 1; transform: none; }
   .js .reveal, .js .from-l, .js .from-r, .js .grow, .js .spin { opacity: 1; transform: none; transition: none; }
-  .dot { animation: none; }
+  .dot, .agent-svg *, .agent-chip { animation: none !important; }
 }
 
 /* ---------- tablet ---------- */
@@ -301,6 +326,10 @@ button { font: inherit; }
   .badge { font-size: 14px; padding: 6px 12px; }
   .arrow-circle { display: none; }
 
+  .agent-chip { font-size: 11px; padding: 6px 10px; }
+  .chip-b, .chip-c { display: none; }
+  .chip-a { left: 4%; top: 5%; }
+  .chip-d { right: 4%; top: 5%; bottom: auto; }
   .reviews { padding: 72px 8px 8px; }
   .reviews-grid { grid-template-columns: 1fr; gap: 12px; margin-top: 32px; }
   .review, .review-badge, .review-try { padding: 24px 22px; }
@@ -313,4 +342,9 @@ button { font: inherit; }
   .footer-line { font-size: 26px; }
   .footer-links { grid-template-columns: repeat(2, max-content); gap: 10px 22px; }
   .socials { grid-auto-flow: column; justify-content: start; justify-items: start; }
+}
+
+@media (max-width: 400px) {
+  .chip-a { display: none; }
+  .chip-d { top: 4%; }
 }
