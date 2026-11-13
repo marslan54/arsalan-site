@@ -19,7 +19,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: var(--cream); color: var(--ink); font: 400 17px/1.55 Outfit, system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
-img, video { display: block; max-width: 100%; }
+img, video { display: block; max-width: 100%; height: auto; }
 a { color: inherit; }
 h1, h2, h3, p, ul, ol { margin: 0; }
 button { font: inherit; }
@@ -141,7 +141,7 @@ button { font: inherit; }
 .dive-text ul { margin-top: 20px; padding-left: 18px; font-size: 15px; line-height: 1.8; }
 .dive-text .meta { margin-top: 16px; font-size: 15px; font-weight: 500; }
 .dive-pic { padding: 12px; display: block; }
-.dive-pic img { border-radius: 8px; width: 100%; }
+.dive-pic img { border-radius: 8px; width: 100%; height: auto; }
 .approve { padding: 22px; display: grid; gap: 12px; }
 .approve .chips { margin-top: 0; }
 .approve .arrowlink { margin-top: 4px; font-size: 15px; }
