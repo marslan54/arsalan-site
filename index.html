@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muhammad Arsalan · AI agents that work</title>
+<meta name="description" content="AI automation engineer building voice, SMS and chat agents that answer leads and book the work, each tested before it goes live. Live demos of every project.">
+<meta property="og:title" content="Muhammad Arsalan · AI agents that work">
+<meta property="og:description" content="Voice, SMS and chat agents that answer your leads and book the work. Every project has a live demo.">
+<meta property="og:image" content="assets/og.jpg">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<header class="bar" data-ink="dark">
+  <a class="mark" href="#top">Muhammad Arsalan</a>
+  <nav aria-label="Sections">
+    <a href="#work">Work</a>
+    <a href="#process">Process</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <a class="btn btn-bar" href="#contact" data-book>Book a call</a>
+</header>
+
+<main id="top">
+
+  <section class="hero" data-field="split" aria-labelledby="hero-title">
+    <div class="hero-top">
+      <h1 id="hero-title" class="hero-title">
+        <span class="line">AI agents</span>
+        <span class="line line-2"><span class="slot" aria-hidden="true"><video src="assets/agents-at-work.mp4" poster="assets/agents-at-work.jpg" autoplay muted loop playsinline preload="auto"></video></span> that work.</span>
+      </h1>
+    </div>
+    <div class="hero-bottom">
+      <p class="hero-lede">I'm Muhammad Arsalan, an AI automation engineer. I build voice, SMS and chat agents that answer your leads and book the work, each tested before it goes live.</p>
+      <div class="hero-try">
+        <button class="btn btn-light" type="button" data-site-assistant-open>Ask my AI assistant</button>
+        <p class="try-label">or tap a question and watch it answer:</p>
+        <div class="asks">
+          <button type="button" class="ask" data-site-assistant-ask="What does a voice agent like yours cost?">What does a voice agent cost?</button>
+          <button type="button" class="ask" data-site-assistant-ask="Could you build something like this for my clinic? We miss calls after hours.">Could you build this for my clinic?</button>
+          <button type="button" class="ask" data-site-assistant-ask="How do you test your AI agents before they go live?">How do you test your agents?</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="work" data-field="light" aria-labelledby="work-title">
+    <div class="wrap">
+      <div class="work-head reveal">
+        <h2 id="work-title" class="h-head">Recent work</h2>
+        <p class="lead">Six agents I built and shipped, each with a live demo you can open: recorded calls, real conversations and the test results behind them.</p>
+      </div>
+
+      <article class="project reveal">
+        <div class="project-text">
+          <h3 class="h-name">AI voice receptionist</h3>
+          <p>A phone agent for a heating and plumbing company. It answers around the clock, quotes only approved prices and books the visit into the calendar while the caller is still on the line.</p>
+          <dl class="facts">
+            <div><dt>Proof</dt><dd>A real recorded call, from hello to booked</dd></div>
+            <div><dt>Built with</dt><dd>Vapi, Claude, TypeScript, Postgres, Cal.com, Twilio</dd></div>
+          </dl>
+          <a class="more" href="https://marslan54.github.io/voice-agent-demo/">Hear the call</a>
+        </div>
+        <a class="project-pic" href="https://marslan54.github.io/voice-agent-demo/" tabindex="-1" aria-hidden="true"><img src="assets/voice-agent.jpg" alt="" width="1400" height="787" loading="lazy"></a>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-text">
+          <h3 class="h-name">Speed-to-lead SMS agent</h3>
+          <p>Texts back every missed call in under a second, qualifies the job, offers real openings, books it and keeps HubSpot in sync. Emergencies go straight to a person.</p>
+          <dl class="facts">
+            <div><dt>Proof</dt><dd>0.7 s from missed call to first text; 150/150 DeepEval checks</dd></div>
+            <div><dt>Built with</dt><dd>n8n, Twilio, Cal.com, HubSpot, Slack</dd></div>
+          </dl>
+          <a class="more" href="https://marslan54.github.io/speed-to-lead-agent-demo/">Watch a conversation</a>
+        </div>
+        <a class="project-pic" href="https://marslan54.github.io/speed-to-lead-agent-demo/" tabindex="-1" aria-hidden="true"><img src="assets/speed-to-lead.jpg" alt="" width="1400" height="787" loading="lazy"></a>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-text">
+          <h3 class="h-name">AI outbound engine</h3>
+          <p>Researches and scores accounts, writes personalised email sequences behind a QA gate that checks every word, and stops every channel the moment someone replies.</p>
+          <dl class="facts">
+            <div><dt>Proof</dt><dd>35/35 acceptance checks; 94/94 evals on real Claude</dd></div>
+            <div><dt>Built with</dt><dd>n8n, Apollo, Clay, Claude, GoHighLevel, Instantly</dd></div>
+          </dl>
+          <a class="more" href="https://marslan54.github.io/outbound-engine-demo/">See the recorded run</a>
+        </div>
+        <a class="project-pic" href="https://marslan54.github.io/outbound-engine-demo/" tabindex="-1" aria-hidden="true"><img src="assets/outbound-engine.jpg" alt="" width="1400" height="787" loading="lazy"></a>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-text">
+          <h3 class="h-name">AI site assistant</h3>
+          <p>The chatbot on this page. It answers from my case studies with sources, learns what you need and hands the chat to me in Slack. If the model is offline it still answers in under a second.</p>
+          <dl class="facts">
+            <div><dt>Proof</dt><dd>9/9 simulated visitors passed; 53 automated tests</dd></div>
+            <div><dt>Built with</dt><dd>TypeScript, Postgres, Claude, Slack, WhatsApp Cloud API</dd></div>
+          </dl>
+          <a class="more" href="https://marslan54.github.io/site-assistant-demo/">See how it was tested</a>
+        </div>
+        <a class="project-pic" href="https://marslan54.github.io/site-assistant-demo/" tabindex="-1" aria-hidden="true"><img src="assets/site-assistant.jpg" alt="" width="1400" height="787" loading="lazy"></a>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-text">
+          <h3 class="h-name">AI recruiter outreach agent</h3>
+          <p>Imports contacts, writes a personalised email, asks for approval in Slack, sends from Gmail with follow-ups, classifies every reply and stops when someone answers.</p>
+          <dl class="facts">
+            <div><dt>Proof</dt><dd>A full recorded run through the real workflows</dd></div>
+            <div><dt>Built with</dt><dd>n8n, Gemini, Gmail, Slack, HubSpot</dd></div>
+          </dl>
+          <a class="more" href="https://marslan54.github.io/recruiter-outreach-agent-demo/">Open the run</a>
+        </div>
+        <a class="project-pic" href="https://marslan54.github.io/recruiter-outreach-agent-demo/" tabindex="-1" aria-hidden="true"><img src="assets/recruiter-outreach.jpg" alt="" width="1400" height="1050" loading="lazy"></a>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-text">
+          <h3 class="h-name">AI landing page workflow</h3>
+          <p>Claude Code turns a reference page, brand rules and a short brief into a finished landing page, then an automated QA gate checks it and packages it for WordPress.</p>
+          <dl class="facts">
+            <div><dt>Proof</dt><dd>23 automated QA tests on every page it builds</dd></div>
+            <div><dt>Built with</dt><dd>Claude Code, Python, WordPress</dd></div>
+          </dl>
+          <a class="more" href="https://marslan54.github.io/claude-landing-page-workflow-demo/">Open the generated page</a>
+        </div>
+        <a class="project-pic" href="https://marslan54.github.io/claude-landing-page-workflow-demo/" tabindex="-1" aria-hidden="true"><img src="assets/landing-page-workflow.jpg" alt="" width="1400" height="1050" loading="lazy"></a>
+      </article>
+    </div>
+  </section>
+
+  <section id="process" class="process" data-field="dark" aria-labelledby="process-title">
+    <div class="wrap">
+      <h2 id="process-title" class="h-head reveal">How a project runs</h2>
+      <ol class="stages reveal" data-ui>
+        <li class="stage" style="--grow: 12"><span class="dur">30 minutes</span><span class="clause">First, a call about your goal, your tools and what good looks like.</span></li>
+        <li class="stage" style="--grow: 14"><span class="dur">A day or two</span><span class="clause">Then a written scope with a fixed price or an hourly estimate.</span></li>
+        <li class="stage" style="--grow: 56"><span class="dur">A few weeks</span><span class="clause">Then the build, with tests and a demo at each milestone.</span></li>
+        <li class="stage" style="--grow: 18"><span class="dur">One handover</span><span class="clause">Last, a runbook and a recorded walkthrough, so your team can run it.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="proof" data-field="light" aria-labelledby="proof-title">
+    <div class="wrap proof-grid">
+      <div class="proof-text reveal">
+        <h2 id="proof-title" class="h-head">Tested like banking software</h2>
+        <p class="statement">Before AI agents I spent seven years in QA, at <span class="lit">TPS Worldwide</span>, <span class="lit">Meezan Bank</span> and <span class="lit">Folio3</span>, on systems where a mistake costs someone money.</p>
+      </div>
+      <ul class="proof-list reveal">
+        <li><b>8,000+ automated test cases</b> on a live bill-payment platform at TPS Worldwide.</li>
+        <li><b>Visa Direct integration testing</b> at Meezan Bank, with the Visa and Avanza teams.</li>
+        <li><b>30% fewer deployment errors</b> and 40% more API coverage on a multi-product SaaS platform.</li>
+        <li><b>Certified by the Australian Computer Society</b> as an ICT Quality Assurance Engineer, ICT Support and Test Engineer, and Software Tester.</li>
+      </ul>
+      <figure class="quote reveal">
+        <blockquote><p>It was a great experience working with Muhammad. I can definitely recommend him!</p></blockquote>
+        <figcaption>Upwork client, 5 stars · QA testing for a multi-exchange trading platform</figcaption>
+      </figure>
+      <figure class="quote reveal">
+        <blockquote><p>Very good experience. Highly recommend.</p></blockquote>
+        <figcaption>Upwork client, 5 stars · Atlassian Confluence app testing</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="pricing" class="pricing" data-field="dark" aria-labelledby="pricing-title">
+    <div class="wrap">
+      <h2 id="pricing-title" class="price-line reveal">AI agents from <span class="price">$25</span> an hour.</h2>
+      <div class="price-foot reveal">
+        <p class="lead">Fixed-price projects are quoted after a discovery call, once the scope is clear, so you know the full price before work starts.</p>
+        <div class="price-actions">
+          <a class="btn btn-light" href="#contact" data-book>Book a discovery call</a>
+          <a class="textlink" href="https://www.upwork.com/freelancers/~010d986b146a33f9f5">Or hire me on Upwork</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq" data-field="light" aria-labelledby="faq-title">
+    <div class="wrap">
+      <h2 id="faq-title" class="h-head reveal">Questions clients ask</h2>
+      <div class="qs reveal">
+        <details>
+          <summary>What can you automate?</summary>
+          <p>Mostly the work that happens around leads and customers: answering calls, texts and website chats, following up, booking appointments, outbound email, recruiting outreach, and moving data between your tools. If a task repeats and follows rules, it can usually be automated, with a person approving the steps that matter.</p>
+        </details>
+        <details>
+          <summary>Which tools do you work with?</summary>
+          <p>n8n for workflows; Claude, OpenAI and Gemini for the AI; Vapi and Twilio for calls and SMS; the WhatsApp Cloud API; HubSpot, GoHighLevel, Clay, Apollo and Instantly for sales; Cal.com, Slack and Gmail; and TypeScript, Python and Postgres when a project needs real code.</p>
+        </details>
+        <details>
+          <summary>How do you stop an AI agent from going wrong?</summary>
+          <p>The same way I tested banking software. Every agent ships with automated tests, and the conversational ones are put through simulated customers (price pressure, prompt injection, off-topic requests) and graded before launch. They only state facts they were given, never invent prices, and hand over to a person when they should.</p>
+        </details>
+        <details>
+          <summary>How long does a project take?</summary>
+          <p>It depends on the scope: a single automation can take days, a full agent with integrations a few weeks. You get the timeline in the written scope, and a working demo at each milestone along the way.</p>
+        </details>
+        <details>
+          <summary>Where are you, and when can we talk?</summary>
+          <p>I'm in Karachi, Pakistan, on UTC+5 all year. That overlaps with mornings in the US, the full working day in Europe and the Gulf, and afternoons in Australia.</p>
+        </details>
+        <details>
+          <summary>How do we work together and pay?</summary>
+          <p>Through Upwork if you want its contracts and payment protection, hourly or fixed price, or directly once we know each other. Either way it starts with a discovery call and a written scope.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact" data-field="dark" aria-labelledby="contact-title">
+    <div class="wrap contact-in">
+      <h2 id="contact-title" class="contact-say reveal">Tell me what you'd like to automate. I'll reply personally.</h2>
+      <div class="contact-main reveal">
+        <a class="contact-big" id="contact-email" href="#" data-site-assistant-ask="I'd like to talk to Arsalan about a project.">Ask my assistant</a>
+        <div class="contact-ways">
+          <a class="btn btn-light" href="#" data-book>Book a discovery call</a>
+          <a class="textlink" id="contact-whatsapp" href="#" hidden>WhatsApp</a>
+          <a class="textlink" href="https://www.upwork.com/freelancers/~010d986b146a33f9f5">Upwork</a>
+          <a class="textlink" href="https://github.com/marslan54">GitHub</a>
+        </div>
+      </div>
+      <p class="contact-meta">Karachi, Pakistan · UTC+5 · Available 30+ hours a week</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot" data-field="dark">
+  <div class="wrap foot-in">
+    <span>© 2026 Muhammad Arsalan</span>
+    <span>Footage and screens are from my own projects' demos.</span>
+    <a class="textlink" href="#top">Back to top</a>
+  </div>
+</footer>
+
+<script src="site.js" defer></script>
+<script src="https://site-assistant-3a51.onrender.com/widget.js" data-accent="#351a2b" async></script>
+</body>
+</html>
