@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="en"><head><meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><title>Workflow</title>
+<link rel="stylesheet" href="_mock.css"><style>
+body{background:#10191A}
+.canvas{position:relative;height:268px;
+  background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:17px 17px}
+.node{position:absolute;background:#1B2729;border:1px solid rgba(255,255,255,.13);border-radius:9px;
+  padding:9px 11px;width:134px;box-shadow:0 10px 22px -12px rgba(0,0,0,.6)}
+.node b{display:block;font-size:11.5px;letter-spacing:-.01em;color:#EDF2EE}
+.node span{display:block;font-size:10px;color:#8DA79C;margin-top:2px}
+.node i{position:absolute;top:-7px;left:11px;width:16px;height:16px;border-radius:5px;display:block}
+.node.ok{border-color:rgba(198,221,102,.42)}
+.node.hold{border-style:dashed;border-color:rgba(224,165,38,.5)}
+.wire{position:absolute;height:2px;background:rgba(255,255,255,.16)}
+.wire.live{background:rgba(198,221,102,.5)}
+.vert{position:absolute;width:2px;background:rgba(255,255,255,.16)}
+.badge{position:absolute;font-size:9.5px;color:#8DA79C;background:rgba(0,0,0,.4);
+  border-radius:4px;padding:2px 6px}
+</style></head><body class="dark">
+<div class="top"><span class="nm">Lead intake <span>· run 4,812</span></span><span class="pill">Succeeded</span>
+<div class="rt"><div><b>1.9s</b>run time</div><div><b>0</b>duplicates</div><div><b>2</b>retries today</div></div></div>
+<div class="canvas">
+  <div class="wire live" style="left:150px;top:68px;width:48px"></div>
+  <div class="wire live" style="left:332px;top:68px;width:48px"></div>
+  <div class="wire" style="left:514px;top:68px;width:48px"></div>
+  <div class="vert" style="left:445px;top:68px;height:72px"></div>
+  <div class="wire" style="left:445px;top:140px;width:117px"></div>
+  <div class="node ok" style="left:16px;top:44px"><i style="background:#C6DD66"></i><b>Webhook</b><span>form + missed call</span></div>
+  <div class="node ok" style="left:198px;top:44px"><i style="background:#6AA6FF"></i><b>Dedupe</b><span>by phone, 24h</span></div>
+  <div class="node ok" style="left:380px;top:44px"><i style="background:#C6A6FF"></i><b>Claude</b><span>classify + draft</span></div>
+  <div class="node hold" style="left:562px;top:44px"><i style="background:#E0A526"></i><b>Slack approve</b><span>waiting 4 min</span></div>
+  <div class="node" style="left:562px;top:116px"><i style="background:#FF7A59"></i><b>HubSpot</b><span>create or update</span></div>
+  <span class="badge" style="left:206px;top:98px">3 retries, backoff</span>
+  <span class="badge" style="left:388px;top:98px">schema checked</span>
+  <span class="badge" style="left:570px;top:170px">on error → #alerts</span>
+</div>
+</body></html>

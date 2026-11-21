@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /privacy.html
+Disallow: /mocks/
 
 Sitemap: https://marslan54.github.io/arsalan-site/sitemap.xml

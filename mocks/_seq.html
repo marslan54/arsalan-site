@@ -1,0 +1,67 @@
+<!DOCTYPE html><html lang="en"><head><meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><title>Sequence</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Inter",-apple-system,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;
+  background:#F6F7F5;color:#16211D;overflow:hidden}
+.top{display:flex;align-items:center;gap:14px;padding:13px 20px;background:#fff;border-bottom:1px solid #E5E9E4}
+.top .nm{font-weight:680;font-size:14px;letter-spacing:-.02em}
+.top .st{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  background:#E9F0D4;color:#4A5B1C;border-radius:999px;padding:4px 10px}
+.top .rt{margin-left:auto;display:flex;gap:18px;font-size:10.5px;color:#6E7D77;text-align:right}
+.top .rt b{display:block;font-size:15px;color:#16211D;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.body{display:grid;grid-template-columns:1fr 272px;gap:14px;padding:14px 20px}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #E5E9E4;border-radius:10px;overflow:hidden}
+th{font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;color:#8A9A93;text-align:left;
+  padding:9px 12px;border-bottom:1px solid #E5E9E4;font-weight:700;background:#FBFCFA}
+td{padding:9px 12px;border-bottom:1px solid #EFF2EE;font-size:12px}
+tr:last-child td{border-bottom:0}
+.who b{display:block;font-size:12.5px;letter-spacing:-.01em}
+.who span{font-size:10.5px;color:#7B8A84}
+.dots{display:flex;gap:4px;align-items:center}
+.dots i{width:16px;height:5px;border-radius:3px;background:#DDE3D9;display:block}
+.dots i.on{background:#8FAE3C}
+.dots i.now{background:#16211D}
+.tag{font-size:10px;font-weight:700;border-radius:5px;padding:3px 8px;white-space:nowrap;display:inline-block}
+.tag.run{background:#EFF2EE;color:#5E6E67}
+.tag.stop{background:#E8572B;color:#fff}
+.tag.held{background:#FDF2D4;color:#6B5110}
+tr.hit{background:#FFF8EC}
+.side{display:flex;flex-direction:column;gap:11px}
+.panel{background:#fff;border:1px solid #E5E9E4;border-radius:10px;padding:12px 13px}
+.panel .k{font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;color:#8A9A93;font-weight:700}
+.panel h4{font-size:13px;margin-top:7px;letter-spacing:-.015em}
+.panel p{font-size:11.5px;line-height:1.45;color:#52625C;margin-top:5px}
+.panel.alert{border-color:#E8572B;box-shadow:0 12px 26px -16px rgba(232,87,43,.5)}
+.panel.alert .k{color:#B23A16}
+.rowx{display:flex;justify-content:space-between;font-size:11.5px;padding:5px 0;border-bottom:1px solid #F1F3F0}
+.rowx:last-child{border-bottom:0}.rowx b{font-variant-numeric:tabular-nums}
+.gate{display:flex;gap:7px;font-size:11px;color:#52625C;margin-top:7px;align-items:flex-start}
+.gate i{width:13px;height:13px;border-radius:3px;background:#8FAE3C;flex:none;margin-top:1px}
+.gate i.no{background:#E8572B}
+</style></head><body>
+<div class="top"><span class="nm">Q4 · UK facilities managers</span><span class="st">Running</span>
+<div class="rt"><div><b>124</b>in sequence</div><div><b>31</b>replies</div><div><b>0</b>sends after a reply</div><div><b>94/94</b>evals passed</div></div></div>
+<div class="body">
+<table><thead><tr><th>Contact</th><th>Steps</th><th>Last step</th><th>State</th></tr></thead><tbody>
+<tr><td class="who"><b>Priya Raman</b><span>Headland Estates · FM lead</span></td>
+<td><span class="dots"><i class="on"></i><i class="on"></i><i class="now"></i><i></i><i></i></span></td><td>Email 2 · opened</td><td><span class="tag run">Step 3 in 2 days</span></td></tr>
+<tr class="hit"><td class="who"><b>Tom Vickers</b><span>Marlowe Group · Ops director</span></td>
+<td><span class="dots"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></td><td>Replied 14 min ago</td><td><span class="tag stop">Every step stopped</span></td></tr>
+<tr><td class="who"><b>Dee Oyelaran</b><span>Castlefield · Facilities</span></td>
+<td><span class="dots"><i class="on"></i><i class="now"></i><i></i><i></i><i></i></span></td><td>Email 1 · sent</td><td><span class="tag run">Step 2 tomorrow</span></td></tr>
+<tr><td class="who"><b>Alan Mercer</b><span>Northbank Services</span></td>
+<td><span class="dots"><i class="on"></i><i></i><i></i><i></i><i></i></span></td><td>Draft 2 · QA failed</td><td><span class="tag held">Held for review</span></td></tr>
+<tr><td class="who"><b>Rosa Pintos</b><span>Keyline Property</span></td>
+<td><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="now"></i><i></i></span></td><td>Call · queued</td><td><span class="tag run">Call list, 9 AM</span></td></tr>
+</tbody></table>
+<div class="side">
+<div class="panel alert"><div class="k">Reply detected</div><h4>Tom Vickers replied</h4>
+<p>Email 3, the call task and the LinkedIn step were all cancelled within the same second. Thread handed to you in Slack.</p></div>
+<div class="panel"><div class="k">QA gate · last 24h</div>
+<div class="gate"><i></i>Claims checked against the client's own proof</div>
+<div class="gate"><i class="no"></i>1 draft blocked: invented a "40% saving"</div></div>
+<div class="panel"><div class="k">Today</div>
+<div class="rowx"><span>Emails sent</span><b>38</b></div>
+<div class="rowx"><span>Drafts blocked by QA</span><b>1</b></div>
+<div class="rowx"><span>Sends after a reply</span><b>0</b></div></div>
+</div></div></body></html>

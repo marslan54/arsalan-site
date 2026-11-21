@@ -1,0 +1,16 @@
+<!DOCTYPE html><html lang="en"><head><meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><title>Triage</title>
+<link rel="stylesheet" href="_mock.css"></head><body>
+<div class="top"><span class="nm">Failure triage <span>· nightly run 2,418</span></span><span class="pill bad">7 failures</span>
+<div class="rt"><div><b>2</b>real bugs</div><div><b>4</b>flaky</div><div><b>1</b>environment</div></div></div>
+<div class="body">
+<div class="panel">
+<table><thead><tr><th>Failed spec</th><th>Verdict</th><th>Why</th></tr></thead><tbody>
+<tr style="background:#FFF8EC"><td class="mono">booking_conflict.spec</td><td><span class="tag no">real bug</span></td><td>Two holds granted for 10:00 when requests land under 40ms apart</td></tr>
+<tr><td class="mono">sms_optout.spec</td><td><span class="tag warn">flaky</span></td><td>Waits on a toast that renders after the assertion</td></tr>
+<tr style="background:#FFF8EC"><td class="mono">price_lookup.spec</td><td><span class="tag no">real bug</span></td><td>Falls back to a cached price when Postgres times out</td></tr>
+<tr><td class="mono">calendar_sync.spec</td><td><span class="tag mute">environment</span></td><td>Cal.com sandbox returned 503 for 90 seconds</td></tr>
+<tr><td class="mono">widget_focus.spec</td><td><span class="tag warn">flaky</span></td><td>Focus race on slow CI runners, quarantined</td></tr>
+<tr><td class="mono">transcript_save.spec</td><td><span class="tag warn">flaky</span></td><td>Fixed by awaiting the write, reopened once</td></tr>
+</tbody></table>
+</div>
+</div></body></html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="en"><head><meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><title>MCP server</title><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Inter",-apple-system,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;
+  background:#0D1714;color:#EDF2EE;overflow:hidden}
+.top{display:flex;align-items:center;gap:11px;padding:13px 20px;border-bottom:1px solid rgba(255,255,255,.09)}
+.dot{width:7px;height:7px;border-radius:50%;background:#C6DD66;display:block;box-shadow:0 0 0 4px rgba(198,221,102,.18)}
+.nm{font-size:13.5px;font-weight:600;letter-spacing:-.01em}
+.nm span{color:#8DA79C;font-weight:400}
+.rt{margin-left:auto;font-size:11px;color:#8DA79C;font-variant-numeric:tabular-nums}
+.body{display:grid;grid-template-columns:1fr 270px;gap:14px;padding:14px 20px}
+.k{font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;color:#7D968C;font-weight:750;margin-bottom:9px}
+.tool{display:flex;align-items:center;gap:11px;background:rgba(255,255,255,.045);
+  border:1px solid rgba(255,255,255,.09);border-radius:9px;padding:9px 12px;margin-bottom:7px}
+.tool.off{opacity:.45;border-style:dashed;background:transparent}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;letter-spacing:-.02em}
+.scope{margin-left:auto;font-size:10px;font-weight:700;border-radius:5px;padding:3px 8px;white-space:nowrap}
+.scope.r{background:rgba(198,221,102,.16);color:#D7E89A}
+.scope.w{background:#C6DD66;color:#17210A}
+.scope.no{background:rgba(255,255,255,.08);color:#9FB7AB}
+.tool em{font-style:normal;font-size:11px;color:#8DA79C}
+.log{background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.08);border-radius:9px;padding:10px 12px}
+.line{display:flex;gap:9px;font-size:11px;padding:4px 0;color:#B6C9C0;align-items:baseline}
+.line b{color:#7D968C;font-weight:400;font-variant-numeric:tabular-nums;flex:none}
+.line .ok{color:#C6DD66}
+.line .no{color:#E8572B}
+.note{margin-top:11px;font-size:11px;line-height:1.5;color:#8DA79C}
+</style></head><body>
+<div class="top"><span class="dot"></span><span class="nm">brightline-mcp <span>· connected to Claude</span></span>
+<span class="rt">4 tools exposed · 1 withheld</span></div>
+<div class="body">
+<div>
+  <div class="k">Tools the agent may call</div>
+  <div class="tool"><span class="mono">search_jobs</span><em>by customer, date, status</em><span class="scope r">read</span></div>
+  <div class="tool"><span class="mono">get_price</span><em>approved list only</em><span class="scope r">read</span></div>
+  <div class="tool"><span class="mono">book_slot</span><em>checks conflicts first</em><span class="scope w">write</span></div>
+  <div class="tool"><span class="mono">send_confirmation</span><em>templated, to the caller</em><span class="scope w">write</span></div>
+  <div class="tool off"><span class="mono">issue_refund</span><em>never exposed to an agent</em><span class="scope no">withheld</span></div>
+</div>
+<div>
+  <div class="k">Audit log</div>
+  <div class="log">
+    <div class="line"><b>09:41:06</b><span class="ok">✓</span><span class="mono">get_price</span></div>
+    <div class="line"><b>09:41:12</b><span class="ok">✓</span><span class="mono">search_jobs</span></div>
+    <div class="line"><b>09:41:48</b><span class="ok">✓</span><span class="mono">book_slot</span></div>
+    <div class="line"><b>09:41:49</b><span class="ok">✓</span><span class="mono">send_confirmation</span></div>
+    <div class="line"><b>09:42:03</b><span class="no">✕</span><span class="mono">issue_refund</span></div>
+  </div>
+  <p class="note">Every call is logged with its arguments. The refused one is logged too, which is the entry you want when someone asks what the agent could reach.</p>
+</div></div></body></html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="en"><head><meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><title>Integrations</title><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Inter",-apple-system,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;
+  background:#F6F7F5;color:#16211D;overflow:hidden}
+.top{display:flex;align-items:center;gap:13px;padding:13px 20px;background:#fff;border-bottom:1px solid #E5E9E4}
+.nm{font-weight:680;font-size:14px;letter-spacing:-.02em}
+.pill{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  background:#E9F0D4;color:#4A5B1C;border-radius:999px;padding:4px 10px}
+.rt{margin-left:auto;display:flex;gap:20px;font-size:10.5px;color:#6E7D77;text-align:right}
+.rt b{display:block;font-size:14.5px;color:#16211D;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.body{display:grid;grid-template-columns:1fr 250px;gap:13px;padding:13px 20px}
+.panel{background:#fff;border:1px solid #E5E9E4;border-radius:10px;overflow:hidden}
+.ph{font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;color:#8A9A93;font-weight:700;
+  padding:9px 13px;border-bottom:1px solid #EFF2EE;background:#FBFCFA}
+.row{display:flex;align-items:center;gap:11px;padding:9px 13px;border-bottom:1px solid #F1F3F0}
+.row:last-child{border-bottom:0}
+.lg{width:26px;height:26px;border-radius:7px;flex:none;display:grid;place-items:center;
+  font-size:9.5px;font-weight:800;color:#fff;letter-spacing:-.02em}
+.row b{font-size:12.5px;letter-spacing:-.01em;display:block}
+.row span{font-size:10.5px;color:#7B8A84}
+.state{margin-left:auto;display:flex;align-items:center;gap:6px;font-size:11px;color:#4A5B1C;white-space:nowrap}
+.state i{width:7px;height:7px;border-radius:50%;background:#8FAE3C;display:block}
+.state.warn{color:#8A6516}.state.warn i{background:#E0A526}
+.dir{font-size:10px;color:#8A9A93;border:1px solid #E5E9E4;border-radius:5px;padding:2px 7px;white-space:nowrap}
+.side{display:flex;flex-direction:column;gap:13px}
+.meter{padding:12px 13px}
+.meter .k{font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;color:#8A9A93;font-weight:700}
+.meter h4{font-size:19px;margin-top:7px;letter-spacing:-.025em;font-variant-numeric:tabular-nums}
+.meter p{font-size:10.5px;color:#7B8A84;margin-top:3px}
+.bar{height:6px;border-radius:999px;background:#EFF2EE;margin-top:9px;overflow:hidden}
+.bar i{display:block;height:100%;width:37%;background:#8FAE3C;border-radius:999px}
+.chk{display:flex;gap:8px;font-size:11px;color:#52625C;padding:7px 13px;align-items:flex-start;
+  border-bottom:1px solid #F1F3F0}
+.chk:last-child{border-bottom:0}
+.chk i{width:13px;height:13px;border-radius:4px;background:#8FAE3C;flex:none;margin-top:1px}
+.chk i.no{background:#E8572B}
+</style></head><body>
+<div class="top"><span class="nm">Integrations · Brightline</span><span class="pill">All healthy</span>
+<div class="rt"><div><b>6</b>connected</div><div><b>0</b>failed writes today</div><div><b>100%</b>schema valid</div></div></div>
+<div class="body">
+<div class="panel">
+  <div class="ph">Connected systems</div>
+  <div class="row"><span class="lg" style="background:#FF7A59">HS</span><div><b>HubSpot</b><span>Contacts, deals, notes</span></div><span class="dir">two-way</span><span class="state"><i></i>synced 2 min ago</span></div>
+  <div class="row"><span class="lg" style="background:#F22F46">TW</span><div><b>Twilio</b><span>Calls and SMS</span></div><span class="dir">inbound</span><span class="state"><i></i>live</span></div>
+  <div class="row"><span class="lg" style="background:#1A1A1A">CAL</span><div><b>Cal.com</b><span>Availability and bookings</span></div><span class="dir">two-way</span><span class="state"><i></i>synced 1 min ago</span></div>
+  <div class="row"><span class="lg" style="background:#4A154B">SL</span><div><b>Slack</b><span>#leads handover</span></div><span class="dir">outbound</span><span class="state"><i></i>live</span></div>
+  <div class="row"><span class="lg" style="background:#336791">PG</span><div><b>Postgres</b><span>Approved price list</span></div><span class="dir">read only</span><span class="state"><i></i>synced</span></div>
+  <div class="row"><span class="lg" style="background:#D93025">GM</span><div><b>Gmail</b><span>Confirmations</span></div><span class="dir">outbound</span><span class="state warn"><i></i>retrying 1 of 3</span></div>
+</div>
+<div class="side">
+  <div class="panel meter"><div class="k">Model spend, this month</div><h4>$18.40 / $50.00</h4>
+    <div class="bar"><i></i></div><p>Hard ceiling. Sends stop rather than overspend.</p></div>
+  <div class="panel"><div class="ph">Every write is checked</div>
+    <div class="chk"><i></i>Output matches the schema before anything downstream reads it</div>
+    <div class="chk"><i></i>Retries with backoff, then a person</div>
+    <div class="chk"><i class="no"></i>1 malformed payload rejected, not written</div></div>
+</div></div></body></html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="en"><head><meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><title>Pipeline</title>
+<link rel="stylesheet" href="_mock.css"><style>
+.stages{display:flex;align-items:stretch;gap:10px;padding:16px 20px 6px}
+.stage{flex:1;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);
+  border-radius:9px;padding:11px 12px;position:relative}
+.stage b{display:block;font-size:12px;letter-spacing:-.01em}
+.stage span{display:block;font-size:10.5px;color:#8DA79C;margin-top:3px;font-variant-numeric:tabular-nums}
+.stage .bar{height:4px;border-radius:999px;background:rgba(255,255,255,.1);margin-top:9px;overflow:hidden}
+.stage .bar i{display:block;height:100%;background:#8FAE3C;border-radius:999px}
+.stage.run{border-color:rgba(198,221,102,.45)}
+.stage.run .bar i{background:#C6DD66}
+.tick{position:absolute;top:10px;right:11px;font-size:12px;color:#C6DD66}
+.meta{display:flex;gap:26px;padding:4px 20px 16px;font-size:11px;color:#8DA79C}
+.meta b{color:#EDF2EE;font-variant-numeric:tabular-nums}
+</style></head><body class="dark">
+<div class="top"><span class="nm">CI · pull request #184 <span>· add rescheduling flow</span></span><span class="pill">All green</span>
+<div class="rt"><div><b>6m 04s</b>total</div><div><b>0</b>flaky reruns</div><div><b>every PR</b>not nightly</div></div></div>
+<div class="stages">
+  <div class="stage"><span class="tick">&check;</span><b>Lint &amp; types</b><span>412 files · 0:21</span><div class="bar"><i style="width:100%"></i></div></div>
+  <div class="stage"><span class="tick">&check;</span><b>Unit</b><span>1,284 tests · 1:06</span><div class="bar"><i style="width:100%"></i></div></div>
+  <div class="stage"><span class="tick">&check;</span><b>Integration</b><span>317 tests · 2:11</span><div class="bar"><i style="width:100%"></i></div></div>
+  <div class="stage"><span class="tick">&check;</span><b>API</b><span>96 contracts · 1:18</span><div class="bar"><i style="width:100%"></i></div></div>
+  <div class="stage run"><b>End to end</b><span>18 of 24 · 1:08</span><div class="bar"><i style="width:75%"></i></div></div>
+</div>
+<div class="meta"><span>Quarantined: <b>2</b> known-flaky specs, tracked not rerun</span>
+<span>Longest test: <b>booking_conflict</b> 0:19</span><span>Runner: <b>ubuntu-latest</b></span></div>
+</body></html>
