@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en" data-scheme="monolime" data-hero="poster" data-hl="lime">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Voice Agent Cost Calculator — what a phone agent really costs per month</title>
+<meta name="description" content="Work out the real monthly running cost of an AI voice agent: platform, transcription, model, voice and the phone line, using Vapi's own published component prices. No email required.">
+<link rel="canonical" href="https://marslan54.github.io/arsalan-site/voice-agent-cost.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Muhammad Arsalan">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://marslan54.github.io/arsalan-site/voice-agent-cost.html">
+<meta property="og:title" content="AI Voice Agent Cost Calculator">
+<meta property="og:description" content="The real monthly running cost of an AI phone agent, built from the component prices the vendors publish. No email required.">
+<meta property="og:image" content="https://marslan54.github.io/arsalan-site/assets/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Voice Agent Cost Calculator">
+<meta name="twitter:description" content="The real monthly running cost of an AI phone agent, built from the component prices the vendors publish.">
+<meta name="twitter:image" content="https://marslan54.github.io/arsalan-site/assets/og-cover.jpg">
+<meta name="author" content="Muhammad Arsalan">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#C6DD66">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css?v=50">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://marslan54.github.io/arsalan-site/voice-agent-cost.html#app",
+   "name": "AI Voice Agent Cost Calculator",
+   "applicationCategory": "BusinessApplication",
+   "operatingSystem": "Any",
+   "url": "https://marslan54.github.io/arsalan-site/voice-agent-cost.html",
+   "description": "Estimates the monthly running cost of an AI phone agent from published component prices: platform, transcription, language model, voice synthesis and telephony.",
+   "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+   "author": {"@type": "Person", "@id": "https://marslan54.github.io/arsalan-site/#person", "name": "Muhammad Arsalan"}
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://marslan54.github.io/arsalan-site/"},
+    {"@type": "ListItem", "position": 2, "name": "Voice agent cost calculator", "item": "https://marslan54.github.io/arsalan-site/voice-agent-cost.html"}
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Why is the advertised per-minute price not what I pay?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Because the headline rate is only the platform's own hosting fee. Vapi advertises $0.05 a minute, and that figure does not include transcription, the language model, voice synthesis or the phone line. Those are billed separately, at cost, and together they are usually worth more than the hosting fee itself."}
+    },
+    {
+     "@type": "Question",
+     "name": "Why is the answer a range instead of one number?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Because the model and voice you choose move the cost several times over. Vapi publishes the language model at $0.0077 to $0.0452 a minute depending on the model. Picking a single number inside that range would mean inventing one, so this shows both ends and lets you see where you would land."}
+    },
+    {
+     "@type": "Question",
+     "name": "Who do I pay?",
+     "acceptedAnswer": {"@type": "Answer", "text": "The vendors, directly, on your own accounts. I do not resell minutes or add a margin to them. If I build the agent, you pay me once for the build, and the running cost on this page goes to Vapi and your phone carrier."}
+    },
+    {
+     "@type": "Question",
+     "name": "Does this include the cost of building the agent?",
+     "acceptedAnswer": {"@type": "Answer", "text": "No. This is the monthly running cost only. The build is a separate one-off cost, and the optional care plan that keeps the agent current is separate again."}
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+
+<svg style="display:none"><symbol id="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></symbol></svg>
+
+<div class="navbar wrap">
+  <nav class="nav">
+    <a class="brand" href="index.html">arsalan</a>
+    <div class="nav-links"><a href="audit.html">Audit</a><a href="services.html">Services</a><a href="index.html#work">Work</a><a href="index.html#packages">Packages</a><a href="index.html#reviews">Reviews</a><a href="index.html#faq">FAQ</a></div>
+    <a class="btn btn-lime" href="index.html#contact" data-book>Book a call <i><svg><use href="#arw"/></svg></i></a>
+  </nav>
+</div>
+
+<section class="svc-hero svc-banner wrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="index.html">Home</a><span aria-hidden="true">/</span><span>Voice agent cost</span>
+  </nav>
+  <p class="eyebrow"><i></i>Free tool &middot; no email, no sign-up</p>
+  <h1 class="h-lg">What an AI phone agent actually costs to run each month.</h1>
+  <p class="lede" style="margin-top:22px">The advertised rate is the platform fee on its own. Transcription, the model, the voice and the phone line are billed on top. Put your own call volume in and see the whole bill.</p>
+</section>
+
+<section class="band" style="padding-top:52px">
+  <div class="wrap">
+    <form class="calc" id="calc" autocomplete="off">
+      <div class="calc-in">
+        <h2 class="h-sm">Your calls</h2>
+
+        <label class="field">
+          <span class="flabel">Calls a month</span>
+          <input type="number" id="calls" value="300" min="0" max="200000" step="10" inputmode="numeric">
+        </label>
+        <input type="range" id="callsR" value="300" min="0" max="3000" step="10" aria-label="Calls a month, slider">
+
+        <label class="field">
+          <span class="flabel">Average call length <small>minutes</small></span>
+          <input type="number" id="len" value="3" min="0.5" max="60" step="0.5" inputmode="decimal">
+        </label>
+        <input type="range" id="lenR" value="3" min="0.5" max="15" step="0.5" aria-label="Average call length, slider">
+
+        <p class="mins">That is <b id="mins">900</b> minutes a month.</p>
+
+        <h2 class="h-sm" style="margin-top:30px">Your setup</h2>
+
+        <label class="field">
+          <span class="flabel">Phone line</span>
+          <select id="transport">
+            <option value="0">Vapi SIP or WebRTC — no transport fee</option>
+            <option value="0.008" selected>Twilio, inbound calls</option>
+            <option value="0.014">Twilio, outbound calls</option>
+            <option value="0.0055">Telnyx</option>
+            <option value="0.00814">Vonage</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span class="flabel">Vapi support package</span>
+          <select id="pkg">
+            <option value="none" selected>None — pay per minute only</option>
+            <option value="core">Core — $29 a month</option>
+            <option value="pro">Pro — $999 a month minimum</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="calc-out" aria-live="polite">
+        <p class="eyebrow"><i></i>Running cost</p>
+        <div class="bigfig"><b id="monthLo">$82</b><span>to</span><b id="monthHi">$129</b></div>
+        <p class="bigsub">a month, paid to the vendors on your own accounts</p>
+
+        <table class="brk">
+          <thead><tr><th>What</th><th>Per minute</th><th>A month</th></tr></thead>
+          <tbody>
+            <tr><td>Vapi platform</td><td>$0.0500</td><td id="rHost">$45</td></tr>
+            <tr><td>Transcription <small>Deepgram</small></td><td>$0.0095&ndash;0.0099</td><td id="rStt">$9</td></tr>
+            <tr><td>Language model <small>OpenAI</small></td><td>$0.0077&ndash;0.0452</td><td id="rLlm">$7&ndash;41</td></tr>
+            <tr><td>Voice <small>ElevenLabs</small></td><td>$0.0146&ndash;0.0238</td><td id="rTts">$13&ndash;21</td></tr>
+            <tr><td>Phone line</td><td id="pTrans">$0.0080</td><td id="rTrans">$7</td></tr>
+            <tr class="pkgrow"><td>Support package</td><td>&mdash;</td><td id="rPkg">$0</td></tr>
+          </tbody>
+          <tfoot><tr><td>Total</td><td id="pTotal">$0.091&ndash;0.143</td><td id="rTotal">$82&ndash;129</td></tr></tfoot>
+        </table>
+
+        <p class="perline">That works out at <b id="perCall">$0.27&ndash;0.43</b> a call.</p>
+
+        <div class="calc-note">
+          <p><b>Where these numbers come from.</b> Every figure is Vapi's own published component pricing from <a href="https://vapi.ai/pricing" rel="nofollow">vapi.ai/pricing</a>, including the transport fees it lists for Twilio, Telnyx and Vonage. Read on <b>21 November 2026</b>. Vendors change prices; if the date above is old, check the source before you rely on it.</p>
+          <p><b>Why it is a range.</b> The model and the voice are the swing. Vapi lists the language model between $0.0077 and $0.0452 a minute depending on which one you pick, so the low end is a small fast model and the high end is a large one. I have not picked a number inside that range, because picking one would mean inventing it.</p>
+          <p><b>Read it as a guide, not a quote.</b> Real calls vary in length, silence is sometimes billed differently, and a model that thinks for longer costs more. Treat this as the right order of magnitude.</p>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="band band-cream">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow"><i></i>What this does not cover</p>
+        <h2 class="h-lg" style="margin-top:14px;max-width:24ch">The running cost is not the whole cost.</h2>
+      </div>
+    </div>
+    <div class="svc-list keeps">
+      <article class="svc keep">
+        <p class="keepkind">One-off</p>
+        <h3 class="h-sm">Building the agent</h3>
+        <p>Someone has to write it, connect it to your calendar and CRM, test it against real calls and put it live. That is a one-off cost and it is not on this page. Mine is on <a href="index.html#packages">the packages</a>.</p>
+      </article>
+      <article class="svc keep">
+        <p class="keepkind">Optional, monthly</p>
+        <h3 class="h-sm">Keeping it true</h3>
+        <p>Your prices and hours change, and the model underneath gets new versions. The <a href="index.html#packages">care plan</a> covers keeping the agent current and re-running the tests when that happens.</p>
+      </article>
+      <article class="svc keep">
+        <p class="keepkind">Sometimes</p>
+        <h3 class="h-sm">Extras on the platform</h3>
+        <p>Vapi includes one phone number on the usage plan and charges for more. Extra concurrent lines are $10 each a month, and HIPAA handling is $2,000 a month if you need it.</p>
+      </article>
+      <article class="svc keep">
+        <p class="keepkind">Worth knowing</p>
+        <h3 class="h-sm">Who you are actually paying</h3>
+        <p>All of the above goes to the vendors, on accounts in your name, with your own cards. I do not resell minutes and I do not mark them up. If I vanish, the agent keeps running and the bills keep arriving as normal.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow"><i></i>Questions</p>
+        <h2 class="h-lg" style="margin-top:14px;max-width:22ch">About these numbers.</h2>
+      </div>
+    </div>
+    <div class="faqs">
+      <details>
+        <summary>Why is the advertised per-minute price not what I pay?<span></span></summary>
+        <p>Because the headline rate is only the platform's own hosting fee. Vapi advertises $0.05 a minute, and that figure does not include transcription, the language model, voice synthesis or the phone line. Those are billed separately, at cost, and together they are usually worth more than the hosting fee itself.</p>
+      </details>
+      <details>
+        <summary>Why is the answer a range instead of one number?<span></span></summary>
+        <p>Because the model and voice you choose move the cost several times over. Vapi publishes the language model at $0.0077 to $0.0452 a minute depending on the model. Picking a single number inside that range would mean inventing one, so this shows both ends and lets you see where you would land.</p>
+      </details>
+      <details>
+        <summary>Who do I pay?<span></span></summary>
+        <p>The vendors, directly, on your own accounts. I do not resell minutes or add a margin to them. If I build the agent, you pay me once for the build, and the running cost on this page goes to Vapi and your phone carrier.</p>
+      </details>
+      <details>
+        <summary>Does this include the cost of building the agent?<span></span></summary>
+        <p>No. This is the monthly running cost only. The build is a separate one-off cost, and the optional care plan that keeps the agent current is separate again.</p>
+      </details>
+      <details>
+        <summary>Is Vapi the only option?<span></span></summary>
+        <p>No. Retell, Bland and ElevenLabs Agents all do the same job with different billing shapes, and some bundle the model and voice into one rate. This calculator uses Vapi because its component pricing is published openly enough to add up in public. The shape of the bill is similar everywhere: a platform fee, a model, a voice, and a phone line.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="band band-cream">
+  <div class="wrap">
+    <div class="cta-card guide-cta">
+      <h2 class="h-lg">Now you know the running cost. The harder question is whether it pays back.</h2>
+      <p class="lede">That is what the audit is for: your two most expensive workflows priced per month, and a ranked answer on what to automate first. $400 flat, five working days, refundable.</p>
+      <div class="btns">
+        <a class="btn btn-lime" href="audit.html">See the audit <i><svg><use href="#arw"/></svg></i></a>
+        <a class="btn btn-line" href="ai-receptionist-home-services.html">Read the receptionist guide <i><svg><use href="#arw"/></svg></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <p class="foot-line">AI agents,<br>made simple.</p>
+        <a class="btn btn-lime" href="index.html#contact" data-book>Book a call <i><svg><use href="#arw"/></svg></i></a>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="audit.html">The audit</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="index.html#work">Work</a></li>
+          <li><a href="index.html#packages">Packages</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Free tools &amp; guides</h4>
+        <ul>
+          <li><a href="voice-agent-cost.html">Voice agent cost calculator</a></li>
+          <li><a href="ai-receptionist-home-services.html">AI receptionist</a></li>
+          <li><a href="text-back-missed-calls.html">Texting back missed calls</a></li>
+          <li><a href="stop-ai-agent-inventing-prices.html">Stopping invented prices</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href="https://www.upwork.com/freelancers/~010d986b146a33f9f5">Upwork profile</a></li>
+          <li><a href="https://github.com/marslan54">GitHub</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>&copy; 2026 Muhammad Arsalan &middot; Karachi, Pakistan &middot; UTC+5</span>
+      <span>Every number on this site comes from a real demo or test run.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Component prices as published on vapi.ai/pricing, read 21 November 2026.
+   Keep this block and the dated note in the page in step with each other. */
+(function(){
+  var P = {
+    host: 0.05,
+    stt:  [0.0095, 0.0099],
+    llm:  [0.0077, 0.0452],
+    tts:  [0.0146, 0.0238]
+  };
+  var $ = function(id){ return document.getElementById(id); };
+  var calls = $('calls'), callsR = $('callsR'), len = $('len'), lenR = $('lenR'),
+      transport = $('transport'), pkg = $('pkg');
+  if (!calls) return;
+
+  // both ends of a range are shown at the same precision, chosen by the larger
+  // of the two, so a span across 10 does not read as "$6.93-41"
+  function dp(n){ return n >= 10 ? 0 : 2; }
+  function money(n, places){
+    var d = places === undefined ? dp(n) : places;
+    return '$' + n.toLocaleString('en-US', {minimumFractionDigits:d, maximumFractionDigits:d});
+  }
+  function range(lo, hi){
+    var d = dp(Math.max(lo, hi));
+    if (lo.toFixed(d) === hi.toFixed(d)) return money(lo, d);
+    return money(lo, d) + '–' + money(hi, d).replace('$','');
+  }
+  function num(el, fallback){
+    var v = parseFloat(el.value);
+    return isFinite(v) && v >= 0 ? v : fallback;
+  }
+
+  function run(){
+    var c = num(calls, 0), l = num(len, 0);
+    var mins = c * l;
+    var t = parseFloat(transport.value) || 0;
+
+    var loMin = P.host + P.stt[0] + P.llm[0] + P.tts[0] + t;
+    var hiMin = P.host + P.stt[1] + P.llm[1] + P.tts[1] + t;
+
+    var fee = pkg.value === 'core' ? 29 : (pkg.value === 'pro' ? Math.max(999, 0.10 * P.host * mins) : 0);
+    var lo = loMin * mins + fee, hi = hiMin * mins + fee;
+
+    $('mins').textContent = Math.round(mins).toLocaleString('en-US');
+    $('monthLo').textContent = money(lo);
+    $('monthHi').textContent = money(hi);
+
+    $('rHost').textContent  = money(P.host * mins);
+    $('rStt').textContent   = range(P.stt[0] * mins, P.stt[1] * mins);
+    $('rLlm').textContent   = range(P.llm[0] * mins, P.llm[1] * mins);
+    $('rTts').textContent   = range(P.tts[0] * mins, P.tts[1] * mins);
+    $('pTrans').textContent = '$' + t.toFixed(4);
+    $('rTrans').textContent = money(t * mins);
+    $('rPkg').textContent   = money(fee);
+
+    $('pTotal').textContent = '$' + loMin.toFixed(3) + '–' + hiMin.toFixed(3);
+    $('rTotal').textContent = range(lo, hi);
+    $('perCall').textContent = c > 0 ? range(lo / c, hi / c) : '—';
+  }
+
+  // the slider and the box are two views of one value
+  function pair(box, slider){
+    slider.addEventListener('input', function(){ box.value = slider.value; run(); });
+    box.addEventListener('input', function(){
+      var v = parseFloat(box.value);
+      if (isFinite(v)) slider.value = Math.min(v, parseFloat(slider.max));
+      run();
+    });
+  }
+  pair(calls, callsR);
+  pair(len, lenR);
+  transport.addEventListener('change', run);
+  pkg.addEventListener('change', run);
+  run();
+})();
+</script>
+<script src="site.js?v=43"></script>
+</body>
+</html>
