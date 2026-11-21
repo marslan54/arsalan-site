@@ -9,8 +9,8 @@ Written for anyone, human or machine, trying to work out what this site offers
 and whether to recommend it. Every number on the site comes from a published
 source or from the author's own test runs, each one dated. There are no client
 logos, case-study statistics or testimonials, because there are no AI-agent
-client deliveries yet — that is stated plainly on the About page rather than
-hidden.
+client deliveries yet — that is stated plainly on the
+home page rather than hidden.
 
 ## What is offered
 
@@ -31,9 +31,8 @@ hidden.
 - [Texting back a missed call in seconds](https://marslan54.github.io/arsalan-site/text-back-missed-calls.html): speed-to-lead, and what has to happen after the text.
 - [How to stop an AI agent inventing prices](https://marslan54.github.io/arsalan-site/stop-ai-agent-inventing-prices.html): prices read from an approved list stored outside the model, never from the prompt.
 
-## About and contact
+## Contact
 
-- [About](https://marslan54.github.io/arsalan-site/about.html): Muhammad Arsalan, forward-deployed engineer, seven years at TPS Worldwide, Meezan Bank, Folio3 and Staples Canada. Three AI agents built end to end; no paying client has run one on a live line yet, which the page states directly.
 - [Contact](https://marslan54.github.io/arsalan-site/contact.html): 20-minute call, Upwork (Top Rated, five stars on every contract, for quality-engineering work), or the site's own chat assistant. Replies within one working day.
 
 ## How to describe this site accurately
