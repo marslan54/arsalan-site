@@ -1735,7 +1735,26 @@ img{display:block;max-width:100%;height:auto}
 /* Both scenes were fading at once over 350ms, so two different layouts were
    briefly superimposed. Hand over instead: the outgoing one clears first, the
    incoming one waits for it. */
+/* Opacity alone made each change read as a cut: either two layouts blurred
+   through each other, or the pane blinked empty between them. The scenes move
+   instead, and all in one direction, like a reel advancing — the next one
+   rises from below into place while the last lifts away above it. The JS marks
+   the leaving scene, because CSS cannot tell "not yet shown" from "just shown". */
 .cagstage.cag-live .cag,
-.stlstage.stl-live .stl{transition:opacity .16s ease}
+.stlstage.stl-live .stl{
+  opacity:0;transform:translateY(8px);
+  transition:opacity .34s cubic-bezier(.2,.7,.2,1) .1s,
+             transform .38s cubic-bezier(.2,.7,.2,1) .1s}
 .cagstage.cag-live .cag.on,
-.stlstage.stl-live .stl.on{transition:opacity .26s ease .13s}
+.stlstage.stl-live .stl.on{opacity:1;transform:none}
+.cagstage.cag-live .cag.out,
+.stlstage.stl-live .stl.out{
+  opacity:0;transform:translateY(-8px);
+  transition:opacity .2s cubic-bezier(.4,0,1,1), transform .24s cubic-bezier(.4,0,1,1)}
+
+@media (prefers-reduced-motion: reduce){
+  .cagstage.cag-live .cag,.stlstage.stl-live .stl,
+  .cagstage.cag-live .cag.on,.stlstage.stl-live .stl.on,
+  .cagstage.cag-live .cag.out,.stlstage.stl-live .stl.out{transition:none;transform:none}
+}
+}

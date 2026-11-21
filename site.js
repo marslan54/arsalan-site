@@ -207,8 +207,19 @@ document.querySelectorAll('[data-flow]').forEach(flow => {
     let at = 0, timer = null, paused = false;
 
     function show(i){
+      const from = at;
       at = (i + scenes.length) % scenes.length;
       scenes.forEach((s, n) => s.classList.toggle('on', n === at));
+      // a scene can still be marked as leaving from a change under half a second
+      // ago; pressing the replay button lands exactly there, and .out would win
+      // over .on and show an empty pane
+      scenes[at].classList.remove('out');
+      // mark the one leaving so it lifts away instead of sinking back down
+      if (from !== at && scenes[from]){
+        const leaving = scenes[from];
+        leaving.classList.add('out');
+        setTimeout(() => leaving.classList.remove('out'), 420);
+      }
       const last = scenes.length - 1;
       dots.forEach((d, n) => {
         d.classList.toggle('on',   n === at && at < last);
