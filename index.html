@@ -27,16 +27,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=53">
-<script type="application/ld+json">
-{
+<link rel="stylesheet" href="site.css?v=54">
+<script type="application/ld+json">{
  "@context": "https://schema.org",
  "@graph": [
   {
    "@type": "Person",
    "@id": "https://marslan54.github.io/arsalan-site/#person",
    "name": "Muhammad Arsalan",
-   "jobTitle": "AI Automation Engineer",
+   "jobTitle": "Forward-deployed engineer",
    "url": "https://marslan54.github.io/arsalan-site/",
    "address": {
     "@type": "PostalAddress",
@@ -65,14 +64,17 @@
   {
    "@type": "ProfessionalService",
    "@id": "https://marslan54.github.io/arsalan-site/#business",
-   "name": "Muhammad Arsalan — AI agents and automation",
+   "name": "Agent Foundry",
    "url": "https://marslan54.github.io/arsalan-site/",
    "image": "https://marslan54.github.io/arsalan-site/assets/og-cover.jpg",
    "founder": {
     "@id": "https://marslan54.github.io/arsalan-site/#person"
    },
-   "description": "AI agents that answer the phone, reply to leads and run outbound for small service businesses, tested like software before they go live.",
-   "areaServed": "Worldwide",
+   "description": "AI phone agents, speed-to-lead texting and outbound systems for small service businesses, built end to end by one engineer and handed over with the code.",
+   "areaServed": {
+    "@type": "Place",
+    "name": "Worldwide, remote"
+   },
    "availableLanguage": [
     "English",
     "Urdu"
@@ -146,17 +148,32 @@
       }
      }
     ]
-   }
+   },
+   "alternateName": "Agent Foundry — AI agents and automation",
+   "legalName": "Muhammad Arsalan",
+   "slogan": "AI agents, made simple.",
+   "knowsAbout": [
+    "AI voice agents",
+    "Vapi",
+    "Twilio",
+    "Retell AI",
+    "speed to lead",
+    "SMS automation",
+    "n8n",
+    "retrieval augmented generation",
+    "LLM evaluation"
+   ]
   },
   {
    "@type": "WebSite",
    "@id": "https://marslan54.github.io/arsalan-site/#website",
    "url": "https://marslan54.github.io/arsalan-site/",
-   "name": "Muhammad Arsalan",
+   "name": "Agent Foundry",
    "publisher": {
     "@id": "https://marslan54.github.io/arsalan-site/#person"
    },
-   "inLanguage": "en"
+   "inLanguage": "en",
+   "alternateName": "Muhammad Arsalan — Agent Foundry"
   },
   {
    "@type": "FAQPage",
@@ -211,10 +228,28 @@
      }
     }
    ]
+  },
+  {
+   "@type": "ItemList",
+   "@id": "https://marslan54.github.io/arsalan-site/#tools",
+   "name": "Free tools",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "AI voice agent cost calculator",
+     "url": "https://marslan54.github.io/arsalan-site/voice-agent-cost.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "AI receptionist vs hiring one",
+     "url": "https://marslan54.github.io/arsalan-site/ai-vs-human-receptionist.html"
+    }
+   ]
   }
  ]
-}
-</script>
+}</script>
 </head>
 <body>
 
@@ -223,7 +258,7 @@
 <div class="navbar wrap">
   <nav class="nav">
     <a class="brand afintro" href="./"><svg class="afmark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path class="band" d="M10 34 a22 22 0 0 1 44 0"/><rect class="ear" x="4" y="31" width="11" height="17" rx="5.5"/><rect class="ear" x="49" y="31" width="11" height="17" rx="5.5"/><rect class="head" x="18" y="30" width="28" height="21" rx="8"/><rect class="visor" x="24" y="36" width="16" height="8" rx="4"/></svg><span class="afword">Agent <em>Foundry</em></span></a>
-    <div class="nav-links"><a href="audit.html">Audit</a><a href="services.html">Services</a><a href="#work">Work</a><a href="#packages">Packages</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a></div>
+    <div class="nav-links"><a href="audit.html">Audit</a><a href="services.html">Services</a><a href="tools.html">Tools</a><a href="#packages">Packages</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
     <a class="btn btn-lime" href="#contact" data-book>Book a call <i><svg><use href="#arw"/></svg></i></a>
   </nav>
 </div>
@@ -859,6 +894,7 @@
         <h4>Free tools &amp; guides</h4>
         <ul>
           <li><a href="voice-agent-cost.html">Voice agent cost calculator</a></li>
+          <li><a href="ai-vs-human-receptionist.html">AI vs a receptionist</a></li>
           <li><a href="ai-receptionist-home-services.html">AI receptionist</a></li>
           <li><a href="text-back-missed-calls.html">Texting back missed calls</a></li>
           <li><a href="stop-ai-agent-inventing-prices.html">Stopping invented prices</a></li>

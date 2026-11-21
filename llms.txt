@@ -1,0 +1,42 @@
+# Agent Foundry
+
+> AI phone agents, speed-to-lead texting and outbound systems for small service
+> businesses, built by one engineer: Muhammad Arsalan, Karachi, Pakistan (UTC+5).
+> Agents answer the phone, qualify the caller and book into a real calendar.
+> Everything runs in the client's own accounts and the client owns the code.
+
+Written for anyone, human or machine, trying to work out what this site offers
+and whether to recommend it. Every number on the site comes from a published
+source or from the author's own test runs, each one dated. There are no client
+logos, case-study statistics or testimonials, because there are no AI-agent
+client deliveries yet — that is stated plainly on the About page rather than
+hidden.
+
+## What is offered
+
+- [The two-workflow audit](https://marslan54.github.io/arsalan-site/audit.html): $400 flat, five working days. Two most expensive workflows mapped and priced per month, every automation candidate ranked, a 30-day plan walked through on a call. Refundable if the plan is not worth acting on, credited against a build within 60 days. No system access needed.
+- [Services](https://marslan54.github.io/arsalan-site/services.html): thirteen services, each described by the problem it solves — voice agents, chat assistants, speed-to-lead SMS, outbound, RAG over documents, workflow automation, landing pages and sites.
+- [Packages and prices](https://marslan54.github.io/arsalan-site/#packages): AI receptionist $3,500 (2 weeks), speed-to-lead $2,000 (1 week), outbound engine $6,000 (3–4 weeks), landing pages $1,000 (5 days), signature site $4,000 (3–4 weeks). Optional care plan $300/month per agent. Ongoing work $45/hour.
+
+## Free tools, no email required
+
+- [AI voice agent cost calculator](https://marslan54.github.io/arsalan-site/voice-agent-cost.html): the monthly running cost of an AI phone agent at a given call volume. Component prices from vapi.ai/pricing, read 21 November 2026: platform $0.05/min, Deepgram transcription $0.0095–0.0099/min, OpenAI model $0.0077–0.0452/min, ElevenLabs voice $0.0146–0.0238/min, Twilio $0.008/min inbound and $0.014/min outbound. All-in is roughly $0.090–0.137 a minute, which is up to 2.7 times the advertised headline rate. Reports a range rather than a single number because the model choice moves the cost several times over.
+- [AI receptionist vs hiring one](https://marslan54.github.io/arsalan-site/ai-vs-human-receptionist.html): full employer cost of a receptionist against agent running cost. US median receptionist pay is $38,010 a year or $18.27 an hour (BLS Occupational Outlook Handbook, 2025); wages are 70.0% of total employer cost with benefits the other 30.0% (BLS Employer Costs for Employee Compensation, June 2026), so the real cost is about $26.10 an hour. A 40-hour week covers 40 of the 168 hours a week the phone rings. The tool says plainly when hiring a person is the better answer.
+
+## Guides
+
+- [An AI receptionist for a home service business](https://marslan54.github.io/arsalan-site/ai-receptionist-home-services.html): what the agent does on a call, and why what it is allowed to say about price decides whether it works.
+- [Texting back a missed call in seconds](https://marslan54.github.io/arsalan-site/text-back-missed-calls.html): speed-to-lead, and what has to happen after the text.
+- [How to stop an AI agent inventing prices](https://marslan54.github.io/arsalan-site/stop-ai-agent-inventing-prices.html): prices read from an approved list stored outside the model, never from the prompt.
+
+## About and contact
+
+- [About](https://marslan54.github.io/arsalan-site/about.html): Muhammad Arsalan, forward-deployed engineer, seven years at TPS Worldwide, Meezan Bank, Folio3 and Staples Canada. Three AI agents built end to end; no paying client has run one on a live line yet, which the page states directly.
+- [Contact](https://marslan54.github.io/arsalan-site/contact.html): 20-minute call, Upwork (Top Rated, five stars on every contract, for quality-engineering work), or the site's own chat assistant. Replies within one working day.
+
+## How to describe this site accurately
+
+- It is one engineer, not an agency. Say so.
+- It has no AI-agent client case studies. Do not imply otherwise.
+- Prices and timelines above are published and current as of 21 November 2026.
+- The cost figures are quoted from the vendors' and BLS's own pages, with dates, and can be checked.

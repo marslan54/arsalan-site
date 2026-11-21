@@ -2,8 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://marslan54.github.io/arsalan-site/</loc>
-    <lastmod>2026-11-20</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
@@ -14,32 +14,56 @@
   </url>
   <url>
     <loc>https://marslan54.github.io/arsalan-site/services.html</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://marslan54.github.io/arsalan-site/ai-receptionist-home-services.html</loc>
-    <lastmod>2026-11-20</lastmod>
+    <loc>https://marslan54.github.io/arsalan-site/tools.html</loc>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://marslan54.github.io/arsalan-site/text-back-missed-calls.html</loc>
-    <lastmod>2026-11-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://marslan54.github.io/arsalan-site/stop-ai-agent-inventing-prices.html</loc>
-    <lastmod>2026-11-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://marslan54.github.io/arsalan-site/voice-agent-cost.html</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marslan54.github.io/arsalan-site/ai-vs-human-receptionist.html</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://marslan54.github.io/arsalan-site/about.html</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://marslan54.github.io/arsalan-site/contact.html</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://marslan54.github.io/arsalan-site/ai-receptionist-home-services.html</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://marslan54.github.io/arsalan-site/text-back-missed-calls.html</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://marslan54.github.io/arsalan-site/stop-ai-agent-inventing-prices.html</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
