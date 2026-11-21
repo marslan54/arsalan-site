@@ -189,3 +189,65 @@ document.querySelectorAll('[data-flow]').forEach(flow => {
   }, { threshold: 0.9 });
   nums.forEach(el => io.observe(el));
 })();
+
+/* The custom-agents card. The CSS runs a three-beat loop on its own; this only
+   takes over once it has loaded, to let someone actually press Approve. The
+   card's whole claim is that it asks a person before it writes, so letting the
+   visitor be that person is the most honest demo available. */
+(function(){
+  const stage = document.getElementById('cagstage');
+  if (!stage) return;
+
+  const scenes = [...stage.querySelectorAll('.cag')];
+  const dots   = [...stage.querySelectorAll('.cagdots i')];
+  const approve = document.getElementById('cagapprove');
+  const note    = document.getElementById('cagnote');
+  if (scenes.length !== 3) return;
+
+  const still = window.matchMedia('(prefers-reduced-motion: reduce)');
+  stage.classList.add('cag-live');
+
+  const HOLD = [2600, 3200, 3000];   // beat 2 gets longer: it is the one with the decision
+  let at = 0, timer = null, paused = false, approved = false;
+
+  function show(i){
+    at = (i + 3) % 3;
+    scenes.forEach((s, n) => s.classList.toggle('on', n === at));
+    dots.forEach((d, n) => {
+      d.classList.toggle('on', n === at && at < 2);
+      d.classList.toggle('done', n === at && at === 2);
+    });
+  }
+  function queue(){
+    clearTimeout(timer);
+    if (paused || still.matches) return;
+    timer = setTimeout(() => { show(at + 1); queue(); }, HOLD[at]);
+  }
+  function stop(){ paused = true; clearTimeout(timer); }
+  function go(){ paused = false; queue(); }
+
+  // a pointer on the card means someone is reading it; do not move under them
+  stage.addEventListener('mouseenter', stop);
+  stage.addEventListener('mouseleave', go);
+  stage.addEventListener('focusin', stop);
+  stage.addEventListener('focusout', go);
+
+  approve?.addEventListener('click', () => {
+    approved = true;
+    if (note){ note.textContent = 'You approved it, so it wrote. That is the whole mechanism.'; note.classList.add('you'); }
+    show(2);
+    stop();
+    // let it resume a moment later, unless they are still pointing at it
+    setTimeout(() => { if (!stage.matches(':hover')) go(); }, 2600);
+  });
+
+  show(still.matches ? 2 : 0);
+
+  // only animate while it is on screen
+  if ('IntersectionObserver' in window){
+    new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? go() : stop()),
+      { threshold: 0.25 }).observe(stage);
+  } else {
+    go();
+  }
+})();

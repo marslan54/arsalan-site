@@ -1508,7 +1508,7 @@ img{display:block;max-width:100%;height:auto}
 .cagstage{display:grid;padding:14px 15px;background:var(--moss);
   font-size:12px;line-height:1.4;color:var(--on-dark)}
 .cag{grid-area:1/1;align-self:start;opacity:0;min-width:0}
-.cag:last-child{opacity:1}
+.cag3{opacity:1}  /* explicit: .cag:last-child broke when the dots were added */
 .cag1{animation:cagA 7s infinite}
 .cag2{animation:cagB 7s infinite}
 .cag3{animation:cagC 7s infinite}
@@ -1547,7 +1547,7 @@ img{display:block;max-width:100%;height:auto}
 @media (prefers-reduced-motion: reduce){
   .cag,.cagdot{animation:none}
   .cag{opacity:0}
-  .cag:last-child{opacity:1}
+  .cag3{opacity:1}  /* explicit: .cag:last-child broke when the dots were added */
 }
 
 /* On a phone the card is narrower, the lines wrap, and all three scenes grew past
@@ -1560,8 +1560,91 @@ img{display:block;max-width:100%;height:auto}
   .cagatt{padding:3px 7px;font-size:10px}
   .cagfrom{font-size:10px}
   .cagsub{margin:2px 0 6px;font-size:12px}
-  .caggrid{gap:4px 12px}
-  .cagask{margin-top:9px;padding-top:8px}
+  .caggrid{gap:3px 12px}
+  .cagask{margin-top:6px;padding-top:6px}
+  .cagstage .cagask .cagyes{padding:3px 10px}
+  .cagedit{padding:3px 9px}
   .cagrow{padding:8px 10px;margin-bottom:5px}
   .cagnote{display:none}
 }
+
+/* ---------- custom agents card: its own two colours, and a real approval ----------
+   The other cards own the lime. This one is the back office rather than the
+   phone, so it gets its own pair and uses them to mean something: amber while
+   it is waiting on a person, blue once the write has happened. No green. */
+.cagstage{--cag-wait:#E6A75C;--cag-done:#63B9E8;position:relative}
+.cagdot{background:var(--cag-wait)}
+.cagstage .cagask .cagyes{background:var(--cag-wait);color:#2A1D14;border-color:var(--cag-wait);
+  font-weight:650;font:inherit;font-size:10.5px;padding:4px 11px;border-radius:999px;
+  border:1px solid var(--cag-wait);cursor:pointer}
+.cagstage .cagask .cagyes:hover{filter:brightness(1.08)}
+.cagstage .cagask .cagyes:focus-visible{outline:2px solid var(--cag-wait);outline-offset:2px}
+.cagedit{font-size:10.5px;padding:4px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.22)}
+.cag3 .cagrow b{color:var(--cag-done)}
+.cagatt{color:var(--cag-done)}
+
+/* the extracted values arrive one at a time, so it reads as reading */
+.cagv{opacity:0;transform:translateY(3px)}
+.cag2 .cagv{animation:cagVal 7s infinite}
+.cagv.v2{animation-name:cagVal2}
+.cagv.v3{animation-name:cagVal3}
+.cagv.v4{animation-name:cagVal4}
+@keyframes cagVal {0%,31%{opacity:0;transform:translateY(3px)}36%,62%{opacity:1;transform:none}67%,100%{opacity:0}}
+@keyframes cagVal2{0%,33%{opacity:0;transform:translateY(3px)}38%,62%{opacity:1;transform:none}67%,100%{opacity:0}}
+@keyframes cagVal3{0%,35%{opacity:0;transform:translateY(3px)}40%,62%{opacity:1;transform:none}67%,100%{opacity:0}}
+@keyframes cagVal4{0%,37%{opacity:0;transform:translateY(3px)}42%,62%{opacity:1;transform:none}67%,100%{opacity:0}}
+
+/* dots sit outside the flow so they cost the scenes no height */
+.cagdots{position:absolute;right:12px;bottom:10px;display:flex;gap:4px}
+.cagdots i{width:13px;height:3px;border-radius:2px;background:rgba(255,255,255,.22);
+  transition:background .3s ease}
+.cagdots i:nth-child(1){animation:cagD1 7s infinite}
+.cagdots i:nth-child(2){animation:cagD2 7s infinite}
+.cagdots i:nth-child(3){animation:cagD3 7s infinite}
+@keyframes cagD1{0%,30%{background:var(--cag-wait)}32%,100%{background:rgba(255,255,255,.22)}}
+@keyframes cagD2{0%,30%{background:rgba(255,255,255,.22)}33%,63%{background:var(--cag-wait)}
+  65%,100%{background:rgba(255,255,255,.22)}}
+@keyframes cagD3{0%,63%{background:rgba(255,255,255,.22)}66%,100%{background:var(--cag-done)}}
+
+/* ---- JS takes over only once it has loaded; without it the CSS loop above runs ---- */
+.cagstage.cag-live .cag,
+.cagstage.cag-live .cagv,
+.cagstage.cag-live .cagdots i{animation:none}
+.cagstage.cag-live .cag{opacity:0;transition:opacity .35s ease}
+.cagstage.cag-live .cag.on{opacity:1}
+.cagstage.cag-live .cagv{transition:opacity .3s ease,transform .3s ease}
+.cagstage.cag-live .cag2.on .cagv{opacity:1;transform:none}
+.cagstage.cag-live .cag2.on .v1{transition-delay:.05s}
+.cagstage.cag-live .cag2.on .v2{transition-delay:.17s}
+.cagstage.cag-live .cag2.on .v3{transition-delay:.29s}
+.cagstage.cag-live .cag2.on .v4{transition-delay:.41s}
+.cagstage.cag-live .cagdots i.on{background:var(--cag-wait)}
+.cagstage.cag-live .cagdots i.done{background:var(--cag-done)}
+.cagstage.cag-live .cagnote.you{color:var(--cag-done)}
+
+.pvchip.cagchip{background:var(--cag-wait,#E6A75C);color:#2A1D14}
+.media-pv .pvchip.cagchip{animation:chipIn 7s infinite}
+
+@media (prefers-reduced-motion: reduce){
+  .cagv{opacity:1;transform:none;animation:none}
+  .cagdots i{animation:none}
+  .cagdots i:nth-child(3){background:var(--cag-done)}
+}
+
+/* 25px is too small to hit on a phone. Grow the touch target without moving
+   anything: the scenes have about 2px of spare height at 390px. */
+.cagstage .cagask .cagyes{position:relative}
+.cagstage .cagask .cagyes::after{content:"";position:absolute;inset:-11px -8px}
+
+/* `.pack p` is (0,1,1) and every scene label is a <p> with a single class at
+   (0,1,0), so all of this text had been losing to it and rendering in --dim
+   grey on a dark pane. Scope under .cagstage to win, and set real contrast. */
+.cagstage .cagk{color:#9FB3A8}
+.cagstage .cagfrom{color:#9FB3A8}
+.cagstage .cagsub{color:var(--on-dark)}
+.cagstage .cagatt{color:var(--cag-done)}
+.cagstage .cagnote{color:#9FB3A8}
+.cagstage .cagrow span{color:#C3D2C9}
+.cagstage .caggrid span{color:#9FB3A8}
+.cagstage .cagask span{color:#9FB3A8}
+.cagstage .cagnote.you{color:var(--cag-done)}

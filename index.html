@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=60">
+<link rel="stylesheet" href="site.css?v=65">
 <script type="application/ld+json">{
  "@context": "https://schema.org",
  "@graph": [
@@ -786,9 +786,9 @@
         </details>
       </div>
       <div class="pack">
-        <div class="pv pv-dark" aria-hidden="true">
+        <div class="pv pv-dark">
           <div class="pv-in media-pv">
-            <div class="pane dark cagstage">
+            <div class="pane dark cagstage" id="cagstage">
               <div class="cag cag1">
                 <p class="cagk"><i class="cagdot"></i>A supplier invoice arrives</p>
                 <div class="cagmail">
@@ -800,21 +800,26 @@
               <div class="cag cag2">
                 <p class="cagk">It reads it, then asks before writing</p>
                 <div class="caggrid">
-                  <span>Supplier</span><b>Fenwick Supplies</b>
-                  <span>Invoice</span><b>88214</b>
-                  <span>Net</span><b>&pound;1,284.00</b>
-                  <span>Due</span><b>14 Dec</b>
+                  <span>Supplier</span><b class="cagv v1">Fenwick Supplies</b>
+                  <span>Invoice</span><b class="cagv v2">88214</b>
+                  <span>Net</span><b class="cagv v3">&pound;1,284.00</b>
+                  <span>Due</span><b class="cagv v4">14 Dec</b>
                 </div>
-                <div class="cagask"><span>Post to Xero?</span><i class="cagyes">Approve</i><i>Edit</i></div>
+                <div class="cagask">
+                  <span>Post to Xero?</span>
+                  <button type="button" class="cagyes" id="cagapprove" aria-label="Approve posting invoice 88214 to Xero, a demonstration">Approve</button>
+                  <span class="cagedit">Edit</span>
+                </div>
               </div>
               <div class="cag cag3">
                 <p class="cagk">Written, and filed where you look</p>
                 <div class="cagrow"><b>Xero</b><span>Bill 88214 posted &middot; &pound;1,284.00</span></div>
                 <div class="cagrow"><b>Drive</b><span>Filed under Fenwick / 2026</span></div>
-                <p class="cagnote">4 minutes of somebody&rsquo;s afternoon, every invoice</p>
+                <p class="cagnote" id="cagnote">4 minutes of somebody&rsquo;s afternoon, every invoice</p>
               </div>
+              <div class="cagdots" aria-hidden="true"><i></i><i></i><i></i></div>
             </div>
-            <span class="pvchip lime">Approval step before anything is written</span>
+            <span class="pvchip cagchip">You approve, then it writes</span>
           </div>
         </div>
         <p class="pain">The job eating a day a week is specific to your business, so nobody sells a product for it.</p>
@@ -1115,6 +1120,6 @@
     </div>
   </div>
 </footer>
-<script src="site.js?v=43"></script>
+<script src="site.js?v=44"></script>
 </body>
 </html>
