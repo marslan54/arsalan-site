@@ -190,64 +190,72 @@ document.querySelectorAll('[data-flow]').forEach(flow => {
   nums.forEach(el => io.observe(el));
 })();
 
-/* The custom-agents card. The CSS runs a three-beat loop on its own; this only
-   takes over once it has loaded, to let someone actually press Approve. The
-   card's whole claim is that it asks a person before it writes, so letting the
-   visitor be that person is the most honest demo available. */
+/* The two animated preview cards. The CSS runs a loop on its own; this takes
+   over once it has loaded so a visitor can press the button in the scene. Both
+   cards share one player, because the only differences between them are the
+   hold times and what the button does. */
 (function(){
-  const stage = document.getElementById('cagstage');
-  if (!stage) return;
-
-  const scenes = [...stage.querySelectorAll('.cag')];
-  const dots   = [...stage.querySelectorAll('.cagdots i')];
-  const approve = document.getElementById('cagapprove');
-  const note    = document.getElementById('cagnote');
-  if (scenes.length !== 3) return;
-
   const still = window.matchMedia('(prefers-reduced-motion: reduce)');
-  stage.classList.add('cag-live');
 
-  const HOLD = [2600, 3200, 3000];   // beat 2 gets longer: it is the one with the decision
-  let at = 0, timer = null, paused = false, approved = false;
+  function player(stage, opts){
+    const scenes = [...stage.querySelectorAll(opts.scene)];
+    const dots   = [...stage.querySelectorAll(opts.dot)];
+    if (scenes.length !== opts.holds.length) return null;
 
-  function show(i){
-    at = (i + 3) % 3;
-    scenes.forEach((s, n) => s.classList.toggle('on', n === at));
-    dots.forEach((d, n) => {
-      d.classList.toggle('on', n === at && at < 2);
-      d.classList.toggle('done', n === at && at === 2);
+    const liveClass = opts.live;
+    stage.classList.add(liveClass);
+    let at = 0, timer = null, paused = false;
+
+    function show(i){
+      at = (i + scenes.length) % scenes.length;
+      scenes.forEach((s, n) => s.classList.toggle('on', n === at));
+      const last = scenes.length - 1;
+      dots.forEach((d, n) => {
+        d.classList.toggle('on',   n === at && at < last);
+        d.classList.toggle('done', n === at && at === last);
+      });
+    }
+    function queue(){
+      clearTimeout(timer);
+      if (paused || still.matches) return;
+      timer = setTimeout(() => { show(at + 1); queue(); }, opts.holds[at]);
+    }
+    const stop = () => { paused = true; clearTimeout(timer); };
+    const go   = () => { paused = false; queue(); };
+
+    // somebody pointing at it or tabbing through is reading it; hold still
+    stage.addEventListener('mouseenter', stop);
+    stage.addEventListener('mouseleave', go);
+    stage.addEventListener('focusin', stop);
+    stage.addEventListener('focusout', go);
+
+    show(still.matches ? scenes.length - 1 : 0);
+
+    if ('IntersectionObserver' in window){
+      new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? go() : stop()),
+        { threshold: 0.25 }).observe(stage);
+    } else { go(); }
+
+    return { show, stop, go, stage };
+  }
+
+  // Custom AI agents: it asks before it writes, so let the visitor be the one who approves.
+  const cag = document.getElementById('cagstage');
+  if (cag){
+    const p = player(cag, { scene:'.cag', dot:'.cagdots i', holds:[2600,3200,3000], live:'cag-live' });
+    const note = document.getElementById('cagnote');
+    document.getElementById('cagapprove')?.addEventListener('click', () => {
+      if (note){ note.textContent = 'You approved it, so it wrote. That is the whole mechanism.'; note.classList.add('you'); }
+      p.show(2); p.stop();
+      setTimeout(() => { if (!cag.matches(':hover')) p.go(); }, 2600);
     });
   }
-  function queue(){
-    clearTimeout(timer);
-    if (paused || still.matches) return;
-    timer = setTimeout(() => { show(at + 1); queue(); }, HOLD[at]);
-  }
-  function stop(){ paused = true; clearTimeout(timer); }
-  function go(){ paused = false; queue(); }
 
-  // a pointer on the card means someone is reading it; do not move under them
-  stage.addEventListener('mouseenter', stop);
-  stage.addEventListener('mouseleave', go);
-  stage.addEventListener('focusin', stop);
-  stage.addEventListener('focusout', go);
-
-  approve?.addEventListener('click', () => {
-    approved = true;
-    if (note){ note.textContent = 'You approved it, so it wrote. That is the whole mechanism.'; note.classList.add('you'); }
-    show(2);
-    stop();
-    // let it resume a moment later, unless they are still pointing at it
-    setTimeout(() => { if (!stage.matches(':hover')) go(); }, 2600);
-  });
-
-  show(still.matches ? 2 : 0);
-
-  // only animate while it is on screen
-  if ('IntersectionObserver' in window){
-    new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? go() : stop()),
-      { threshold: 0.25 }).observe(stage);
-  } else {
-    go();
+  // Speed-to-lead: the whole claim is the gap between the missed call and the reply,
+  // so the button simply plays that gap again from the start.
+  const stl = document.getElementById('stlstage');
+  if (stl){
+    const p = player(stl, { scene:'.stl', dot:'.stldots i', holds:[2800,2800,3200], live:'stl-live' });
+    document.getElementById('stlagain')?.addEventListener('click', () => { p.show(0); p.go(); });
   }
 })();

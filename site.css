@@ -1648,3 +1648,85 @@ img{display:block;max-width:100%;height:auto}
 .cagstage .caggrid span{color:#9FB3A8}
 .cagstage .cagask span{color:#9FB3A8}
 .cagstage .cagnote.you{color:var(--cag-done)}
+
+/* ---------- speed-to-lead card: the loss, the speed, the booking ----------
+   A light pane, so these are the darker ends of the same two ideas used on the
+   custom-agents card: a warning colour while the work is being lost, and the
+   same blue once it is done. No green here either. */
+.stlstage{--stl-miss:#C2452C;--stl-done:#1C7FA8;position:relative;
+  padding:13px 14px;background:#fff;font-size:12px;line-height:1.45;display:grid}
+.stl{grid-area:1/1;align-self:start;opacity:0;min-width:0}
+.stl3{opacity:1}
+.stl1{animation:stlA 8s infinite}
+.stl2{animation:stlB 8s infinite}
+.stl3{animation:stlC 8s infinite}
+@keyframes stlA{0%{opacity:0}4%,28%{opacity:1}33%,100%{opacity:0}}
+@keyframes stlB{0%,28%{opacity:0}34%,58%{opacity:1}63%,100%{opacity:0}}
+@keyframes stlC{0%,58%{opacity:0}64%,97%{opacity:1}100%{opacity:0}}
+
+.stlstage .stlk{display:flex;align-items:center;gap:7px;font-size:9.5px;letter-spacing:.07em;
+  text-transform:uppercase;font-weight:650;color:#6B746E;margin-bottom:9px}
+.stldot{width:7px;height:7px;border-radius:50%;background:var(--stl-miss);flex:none;
+  animation:stlPulse 1.5s ease-in-out infinite}
+@keyframes stlPulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+.stlmiss{background:#FBEDEA;border-left:3px solid var(--stl-miss);border-radius:7px;padding:9px 11px}
+.stlstage .stlnum{font-weight:650;font-size:13px;color:var(--forest);font-variant-numeric:tabular-nums}
+.stlstage .stlwhy{font-size:11.5px;color:#6B746E;margin-top:2px}
+.stlstage .stlfoot{font-size:10.5px;color:var(--stl-miss);margin-top:9px;font-weight:600}
+
+.stlbub{border-radius:12px;padding:9px 12px;font-size:12px;line-height:1.45;max-width:92%}
+.stlbub.out{background:var(--forest);color:var(--on-dark);margin-left:auto}
+.stlbub.in{background:#EFF1EE;color:var(--forest)}
+.stlstage .stlmeta{font-size:10.5px;color:#6B746E;margin-top:9px;text-align:right}
+.stlsec{color:var(--stl-done);font-weight:700;font-variant-numeric:tabular-nums}
+
+.stlslot{display:flex;align-items:baseline;gap:9px;margin-top:8px;padding:8px 11px;
+  border-radius:8px;background:#EAF4F9;border-left:3px solid var(--stl-done)}
+.stlslot b{font-size:12px;font-weight:650;flex:none}
+.stlstage .stlslot span{font-size:11px;color:#56636B;min-width:0}
+
+.stlagain{margin-top:9px;font:inherit;font-size:10.5px;font-weight:600;cursor:pointer;
+  background:transparent;color:var(--stl-done);border:1px solid rgba(28,127,168,.35);
+  border-radius:999px;padding:4px 11px;position:relative}
+.stlagain:hover{background:#EAF4F9}
+.stlagain:focus-visible{outline:2px solid var(--stl-done);outline-offset:2px}
+.stlagain::after{content:"";position:absolute;inset:-11px -8px}
+
+.stldots{position:absolute;right:11px;bottom:9px;display:flex;gap:4px}
+.stldots i{width:13px;height:3px;border-radius:2px;background:rgba(21,32,26,.15);
+  transition:background .3s ease}
+.stldots i:nth-child(1){animation:stlD1 8s infinite}
+.stldots i:nth-child(2){animation:stlD2 8s infinite}
+.stldots i:nth-child(3){animation:stlD3 8s infinite}
+@keyframes stlD1{0%,29%{background:var(--stl-miss)}31%,100%{background:rgba(21,32,26,.15)}}
+@keyframes stlD2{0%,29%{background:rgba(21,32,26,.15)}32%,59%{background:var(--stl-miss)}
+  61%,100%{background:rgba(21,32,26,.15)}}
+@keyframes stlD3{0%,59%{background:rgba(21,32,26,.15)}62%,100%{background:var(--stl-done)}}
+
+/* JS enhances; without it the loop above still plays */
+.stlstage.stl-live .stl,
+.stlstage.stl-live .stldots i{animation:none}
+.stlstage.stl-live .stl{opacity:0;transition:opacity .35s ease}
+.stlstage.stl-live .stl.on{opacity:1}
+.stlstage.stl-live .stldots i.on{background:var(--stl-miss)}
+.stlstage.stl-live .stldots i.done{background:var(--stl-done)}
+
+.pvchip.stlchip{background:var(--forest);color:var(--on-dark)}
+.media-pv .pvchip.stlchip{animation:chipIn 8s infinite}
+
+@media (max-width:620px){
+  .stlstage{padding:11px 12px;font-size:11.5px}
+  .stlstage .stlk{margin-bottom:7px}
+  .stlmiss{padding:8px 10px}
+  .stlbub{padding:8px 10px;font-size:11.5px}
+  .stlslot{padding:7px 10px}
+  .stlstage .stlfoot{margin-top:7px}
+  .stlagain{margin-top:7px}
+}
+@media (prefers-reduced-motion: reduce){
+  .stl,.stldots i,.stldot{animation:none}
+  .stl{opacity:0}
+  .stl3{opacity:1}
+  .stldots i:nth-child(3){background:var(--stl-done)}
+}

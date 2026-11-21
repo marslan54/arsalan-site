@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=65">
+<link rel="stylesheet" href="site.css?v=66">
 <script type="application/ld+json">{
  "@context": "https://schema.org",
  "@graph": [
@@ -652,10 +652,31 @@
         </details>
       </div>
       <div class="pack">
-        <div class="pv pv-light" aria-hidden="true">
+        <div class="pv pv-light">
           <div class="pv-in media-pv">
-            <div class="pane"><img class="thread-shot" src="assets/ph-sms.jpg" alt="A phone message thread where a missed call is answered by text in under a second, qualified, and booked"></div>
-            <span class="pvchip lime">Replied in 0.8s · booked in 4 min</span>
+            <div class="pane stlstage" id="stlstage">
+              <div class="stl stl1">
+                <p class="stlk"><i class="stldot"></i>11:42 &middot; missed call</p>
+                <div class="stlmiss">
+                  <p class="stlnum">+44 7700 900412</p>
+                  <p class="stlwhy">Everyone is on a job. It rings out.</p>
+                </div>
+                <p class="stlfoot">This is the moment the work is usually lost</p>
+              </div>
+              <div class="stl stl2">
+                <p class="stlk">Texted back</p>
+                <div class="stlbub out">Sorry we missed you &mdash; Brightline Heating here. What&rsquo;s happened, and whereabouts are you?</div>
+                <p class="stlmeta"><b class="stlsec">4.2 seconds</b> after the call ended</p>
+              </div>
+              <div class="stl stl3">
+                <p class="stlk">They reply, and it books</p>
+                <div class="stlbub in">Boiler&rsquo;s out. Didsbury. Today if you can.</div>
+                <div class="stlslot"><b>Today 15:30</b><span>Leak &middot; Didsbury &middot; written to the CRM</span></div>
+                <button type="button" class="stlagain" id="stlagain" aria-label="Replay the missed-call sequence">Run it again</button>
+              </div>
+              <div class="stldots" aria-hidden="true"><i></i><i></i><i></i></div>
+            </div>
+            <span class="pvchip stlchip">Replied in seconds, not the morning after</span>
           </div>
         </div>
         <p class="pain">A form arrives at 7pm. You see it at 8am. They booked someone else at 7:10.</p>
@@ -1120,6 +1141,6 @@
     </div>
   </div>
 </footer>
-<script src="site.js?v=44"></script>
+<script src="site.js?v=45"></script>
 </body>
 </html>
