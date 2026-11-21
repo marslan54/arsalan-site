@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=57">
+<link rel="stylesheet" href="site.css?v=60">
 <script type="application/ld+json">{
  "@context": "https://schema.org",
  "@graph": [
@@ -788,9 +788,31 @@
       <div class="pack">
         <div class="pv pv-dark" aria-hidden="true">
           <div class="pv-in media-pv">
-            <div class="pane dark">
-              <img class="shot scrA" src="assets/workflow.jpg" alt="An n8n workflow canvas: webhook, dedupe, Claude classification, a Slack approval step waiting, and a HubSpot write">
-              <img class="shot scrB" src="assets/mcp-server.jpg" alt="An MCP server admin view listing the four tools the agent may call, with read or write scope on each and one tool withheld">
+            <div class="pane dark cagstage">
+              <div class="cag cag1">
+                <p class="cagk"><i class="cagdot"></i>A supplier invoice arrives</p>
+                <div class="cagmail">
+                  <p class="cagfrom">Fenwick Supplies &middot; accounts@</p>
+                  <p class="cagsub">Invoice 88214 &middot; October delivery</p>
+                  <p class="cagatt">invoice-88214.pdf &middot; 1 page</p>
+                </div>
+              </div>
+              <div class="cag cag2">
+                <p class="cagk">It reads it, then asks before writing</p>
+                <div class="caggrid">
+                  <span>Supplier</span><b>Fenwick Supplies</b>
+                  <span>Invoice</span><b>88214</b>
+                  <span>Net</span><b>&pound;1,284.00</b>
+                  <span>Due</span><b>14 Dec</b>
+                </div>
+                <div class="cagask"><span>Post to Xero?</span><i class="cagyes">Approve</i><i>Edit</i></div>
+              </div>
+              <div class="cag cag3">
+                <p class="cagk">Written, and filed where you look</p>
+                <div class="cagrow"><b>Xero</b><span>Bill 88214 posted &middot; &pound;1,284.00</span></div>
+                <div class="cagrow"><b>Drive</b><span>Filed under Fenwick / 2026</span></div>
+                <p class="cagnote">4 minutes of somebody&rsquo;s afternoon, every invoice</p>
+              </div>
             </div>
             <span class="pvchip lime">Approval step before anything is written</span>
           </div>

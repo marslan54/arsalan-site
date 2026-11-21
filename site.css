@@ -1499,3 +1499,69 @@ img{display:block;max-width:100%;height:auto}
   .team-buy{grid-template-columns:1fr;gap:24px}
 }
 @media (max-width:620px){ .team{padding:28px 24px 26px} }
+
+/* ---------- custom agents preview: a job arriving, being read, and written away ----------
+   Runs on the 7s clock the .pvchip already uses, so the chip lands exactly as the
+   write happens. Scenes are stacked in one grid cell so the card never changes
+   height, and the third is the resting state: with animation off you see the
+   finished result rather than an empty pane. */
+.cagstage{display:grid;padding:14px 15px;background:var(--moss);
+  font-size:12px;line-height:1.4;color:var(--on-dark)}
+.cag{grid-area:1/1;align-self:start;opacity:0;min-width:0}
+.cag:last-child{opacity:1}
+.cag1{animation:cagA 7s infinite}
+.cag2{animation:cagB 7s infinite}
+.cag3{animation:cagC 7s infinite}
+@keyframes cagA{0%{opacity:0}4%,29%{opacity:1}34%,100%{opacity:0}}
+@keyframes cagB{0%,29%{opacity:0}36%,62%{opacity:1}67%,100%{opacity:0}}
+@keyframes cagC{0%,62%{opacity:0}69%,97%{opacity:1}100%{opacity:0}}
+
+.cagk{display:flex;align-items:center;gap:7px;font-size:10px;letter-spacing:.07em;
+  text-transform:uppercase;font-weight:650;color:var(--on-dark-dim);margin-bottom:10px}
+.cagdot{width:7px;height:7px;border-radius:50%;background:var(--lime);flex:none;
+  animation:cagPulse 1.6s ease-in-out infinite}
+@keyframes cagPulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+.cagmail{background:rgba(255,255,255,.07);border-radius:8px;padding:11px 12px}
+.cagfrom{font-size:10.5px;color:var(--on-dark-dim)}
+.cagsub{font-weight:600;margin:3px 0 7px;font-size:12.5px}
+.cagatt{display:inline-block;font-size:10.5px;color:var(--on-dark);
+  background:rgba(255,255,255,.1);border-radius:5px;padding:4px 8px}
+
+.caggrid{display:grid;grid-template-columns:auto 1fr;gap:5px 14px;align-items:baseline}
+.caggrid span{font-size:10.5px;color:var(--on-dark-dim)}
+.caggrid b{font-weight:600;font-variant-numeric:tabular-nums}
+.cagask{display:flex;align-items:center;gap:8px;margin-top:11px;padding-top:10px;
+  border-top:1px solid rgba(255,255,255,.12);flex-wrap:wrap}
+.cagask span{font-size:11px;color:var(--on-dark-dim);margin-right:auto}
+.cagask i{font-style:normal;font-size:10.5px;padding:4px 10px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.22)}
+.cagask .cagyes{background:var(--lime);color:var(--on-accent);border-color:var(--lime);font-weight:600}
+
+.cagrow{display:flex;align-items:baseline;gap:10px;background:rgba(255,255,255,.07);
+  border-radius:8px;padding:9px 11px;margin-bottom:6px}
+.cagrow b{font-size:11px;font-weight:650;flex:none;min-width:38px}
+.cagrow span{font-size:11.5px;color:var(--on-dark-dim);min-width:0}
+.cagnote{font-size:10.5px;color:var(--on-dark-dim);margin-top:8px}
+
+@media (prefers-reduced-motion: reduce){
+  .cag,.cagdot{animation:none}
+  .cag{opacity:0}
+  .cag:last-child{opacity:1}
+}
+
+/* On a phone the card is narrower, the lines wrap, and all three scenes grew past
+   the fixed 178px preview and were being clipped. Tighten the spacing and drop the
+   one line that is commentary rather than content. */
+@media (max-width:620px){
+  .cagstage{padding:10px 12px;font-size:11.5px}
+  .cagk{margin-bottom:6px;font-size:9.5px}
+  .cagmail{padding:8px 10px}
+  .cagatt{padding:3px 7px;font-size:10px}
+  .cagfrom{font-size:10px}
+  .cagsub{margin:2px 0 6px;font-size:12px}
+  .caggrid{gap:4px 12px}
+  .cagask{margin-top:9px;padding-top:8px}
+  .cagrow{padding:8px 10px;margin-bottom:5px}
+  .cagnote{display:none}
+}
