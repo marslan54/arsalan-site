@@ -1509,9 +1509,9 @@ img{display:block;max-width:100%;height:auto}
   font-size:12px;line-height:1.4;color:var(--on-dark)}
 .cag{grid-area:1/1;align-self:start;opacity:0;min-width:0}
 .cag3{opacity:1}  /* explicit: .cag:last-child broke when the dots were added */
-.cag1{animation:cagA 7s infinite}
-.cag2{animation:cagB 7s infinite}
-.cag3{animation:cagC 7s infinite}
+.cag1{animation:cagA 9s infinite}
+.cag2{animation:cagB 9s infinite}
+.cag3{animation:cagC 9s infinite}
 @keyframes cagA{0%{opacity:0}4%,29%{opacity:1}34%,100%{opacity:0}}
 @keyframes cagB{0%,29%{opacity:0}36%,62%{opacity:1}67%,100%{opacity:0}}
 @keyframes cagC{0%,62%{opacity:0}69%,97%{opacity:1}100%{opacity:0}}
@@ -1585,7 +1585,7 @@ img{display:block;max-width:100%;height:auto}
 
 /* the extracted values arrive one at a time, so it reads as reading */
 .cagv{opacity:0;transform:translateY(3px)}
-.cag2 .cagv{animation:cagVal 7s infinite}
+.cag2 .cagv{animation:cagVal 9s infinite}
 .cagv.v2{animation-name:cagVal2}
 .cagv.v3{animation-name:cagVal3}
 .cagv.v4{animation-name:cagVal4}
@@ -1598,9 +1598,9 @@ img{display:block;max-width:100%;height:auto}
 .cagdots{position:absolute;right:12px;bottom:10px;display:flex;gap:4px}
 .cagdots i{width:13px;height:3px;border-radius:2px;background:rgba(255,255,255,.22);
   transition:background .3s ease}
-.cagdots i:nth-child(1){animation:cagD1 7s infinite}
-.cagdots i:nth-child(2){animation:cagD2 7s infinite}
-.cagdots i:nth-child(3){animation:cagD3 7s infinite}
+.cagdots i:nth-child(1){animation:cagD1 9s infinite}
+.cagdots i:nth-child(2){animation:cagD2 9s infinite}
+.cagdots i:nth-child(3){animation:cagD3 9s infinite}
 @keyframes cagD1{0%,30%{background:var(--cag-wait)}32%,100%{background:rgba(255,255,255,.22)}}
 @keyframes cagD2{0%,30%{background:rgba(255,255,255,.22)}33%,63%{background:var(--cag-wait)}
   65%,100%{background:rgba(255,255,255,.22)}}
@@ -1614,6 +1614,7 @@ img{display:block;max-width:100%;height:auto}
 .cagstage.cag-live .cag.on{opacity:1}
 .cagstage.cag-live .cagv{transition:opacity .3s ease,transform .3s ease}
 .cagstage.cag-live .cag2.on .cagv{opacity:1;transform:none}
+.cagstage.cag-live .cagv{transition-delay:0s}
 .cagstage.cag-live .cag2.on .v1{transition-delay:.05s}
 .cagstage.cag-live .cag2.on .v2{transition-delay:.17s}
 .cagstage.cag-live .cag2.on .v3{transition-delay:.29s}
@@ -1623,7 +1624,7 @@ img{display:block;max-width:100%;height:auto}
 .cagstage.cag-live .cagnote.you{color:var(--cag-done)}
 
 .pvchip.cagchip{background:var(--cag-wait,#E6A75C);color:#2A1D14}
-.media-pv .pvchip.cagchip{animation:chipIn 7s infinite}
+.media-pv .pvchip.cagchip{animation:none;opacity:1;transform:none}
 
 @media (prefers-reduced-motion: reduce){
   .cagv{opacity:1;transform:none;animation:none}
@@ -1657,9 +1658,9 @@ img{display:block;max-width:100%;height:auto}
   padding:13px 14px;background:#fff;font-size:12px;line-height:1.45;display:grid}
 .stl{grid-area:1/1;align-self:start;opacity:0;min-width:0}
 .stl3{opacity:1}
-.stl1{animation:stlA 8s infinite}
-.stl2{animation:stlB 8s infinite}
-.stl3{animation:stlC 8s infinite}
+.stl1{animation:stlA 9s infinite}
+.stl2{animation:stlB 9s infinite}
+.stl3{animation:stlC 9s infinite}
 @keyframes stlA{0%{opacity:0}4%,28%{opacity:1}33%,100%{opacity:0}}
 @keyframes stlB{0%,28%{opacity:0}34%,58%{opacity:1}63%,100%{opacity:0}}
 @keyframes stlC{0%,58%{opacity:0}64%,97%{opacity:1}100%{opacity:0}}
@@ -1696,9 +1697,9 @@ img{display:block;max-width:100%;height:auto}
 .stldots{position:absolute;right:11px;bottom:9px;display:flex;gap:4px}
 .stldots i{width:13px;height:3px;border-radius:2px;background:rgba(21,32,26,.15);
   transition:background .3s ease}
-.stldots i:nth-child(1){animation:stlD1 8s infinite}
-.stldots i:nth-child(2){animation:stlD2 8s infinite}
-.stldots i:nth-child(3){animation:stlD3 8s infinite}
+.stldots i:nth-child(1){animation:stlD1 9s infinite}
+.stldots i:nth-child(2){animation:stlD2 9s infinite}
+.stldots i:nth-child(3){animation:stlD3 9s infinite}
 @keyframes stlD1{0%,29%{background:var(--stl-miss)}31%,100%{background:rgba(21,32,26,.15)}}
 @keyframes stlD2{0%,29%{background:rgba(21,32,26,.15)}32%,59%{background:var(--stl-miss)}
   61%,100%{background:rgba(21,32,26,.15)}}
@@ -1713,7 +1714,7 @@ img{display:block;max-width:100%;height:auto}
 .stlstage.stl-live .stldots i.done{background:var(--stl-done)}
 
 .pvchip.stlchip{background:var(--forest);color:var(--on-dark)}
-.media-pv .pvchip.stlchip{animation:chipIn 8s infinite}
+.media-pv .pvchip.stlchip{animation:none;opacity:1;transform:none}
 
 @media (max-width:620px){
   .stlstage{padding:11px 12px;font-size:11.5px}
@@ -1730,3 +1731,11 @@ img{display:block;max-width:100%;height:auto}
   .stl3{opacity:1}
   .stldots i:nth-child(3){background:var(--stl-done)}
 }
+
+/* Both scenes were fading at once over 350ms, so two different layouts were
+   briefly superimposed. Hand over instead: the outgoing one clears first, the
+   incoming one waits for it. */
+.cagstage.cag-live .cag,
+.stlstage.stl-live .stl{transition:opacity .16s ease}
+.cagstage.cag-live .cag.on,
+.stlstage.stl-live .stl.on{transition:opacity .26s ease .13s}

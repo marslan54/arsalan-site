@@ -242,7 +242,7 @@ document.querySelectorAll('[data-flow]').forEach(flow => {
   // Custom AI agents: it asks before it writes, so let the visitor be the one who approves.
   const cag = document.getElementById('cagstage');
   if (cag){
-    const p = player(cag, { scene:'.cag', dot:'.cagdots i', holds:[2600,3200,3000], live:'cag-live' });
+    const p = player(cag, { scene:'.cag', dot:'.cagdots i', holds:[2600,3400,3000], live:'cag-live' });
     const note = document.getElementById('cagnote');
     document.getElementById('cagapprove')?.addEventListener('click', () => {
       if (note){ note.textContent = 'You approved it, so it wrote. That is the whole mechanism.'; note.classList.add('you'); }
@@ -255,7 +255,7 @@ document.querySelectorAll('[data-flow]').forEach(flow => {
   // so the button simply plays that gap again from the start.
   const stl = document.getElementById('stlstage');
   if (stl){
-    const p = player(stl, { scene:'.stl', dot:'.stldots i', holds:[2800,2800,3200], live:'stl-live' });
+    const p = player(stl, { scene:'.stl', dot:'.stldots i', holds:[2800,2800,3400], live:'stl-live' });
     document.getElementById('stlagain')?.addEventListener('click', () => { p.show(0); p.go(); });
   }
 })();
