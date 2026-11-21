@@ -1385,3 +1385,67 @@ img{display:block;max-width:100%;height:auto}
   .calc{grid-template-columns:1fr}
   .calc-in,.calc-out{padding:26px 24px 28px}
 }
+
+/* ---------- the Agent Foundry mark ----------
+   Two drawings of one logo. The nav uses the reduced mark, because below about
+   32px the mic boom and the thin band turn to mush; the footer has room for the
+   full one. Colours come from custom properties so the same markup works on the
+   light page and on the dark footer. */
+.brand{display:inline-flex;align-items:center;gap:10px;font-size:19px;font-weight:650;
+  letter-spacing:-.03em;line-height:1}
+.afword em{font-style:normal;font-weight:300}
+.afmark{width:30px;height:30px;flex:none;
+  --af-ink:var(--forest);--af-acc:var(--lime);--af-boom:var(--lime)}
+.afmark-lg{width:40px;height:40px}
+.afmark .band{stroke:var(--af-ink);stroke-width:6.5;fill:none;stroke-linecap:round}
+.afmark-lg .band{stroke-width:5}
+.afmark .head,.afmark .ear{fill:var(--af-ink)}
+.afmark .visor{fill:var(--af-acc)}
+.afmark .boom{stroke:var(--af-boom);stroke-width:3.4;fill:none;stroke-linecap:round}
+/* on the dark footer the head carries the light and the visor becomes the dark note:
+   lime on near-white is far too close to read */
+.foot .afmark{--af-ink:var(--on-dark);--af-acc:var(--forest);--af-boom:var(--lime)}
+.foot-brand{margin-bottom:22px;color:var(--on-dark)}
+
+/* idle blink. Resting state is the open visor, so a browser that never runs this
+   still shows the finished logo. */
+.afmark *{transform-box:fill-box;transform-origin:center}
+.afmark .visor{animation:afblink 5.5s infinite}
+@keyframes afblink{0%,93%{transform:scaleY(1)}96%{transform:scaleY(.12)}99%{transform:scaleY(1)}}
+
+/* hover answers the pointer, which is the only motion nobody minds */
+.brand .afmark{transition:transform .32s cubic-bezier(.2,.7,.2,1)}
+.brand .visor{transition:transform .32s ease}
+.brand:hover .afmark{transform:rotate(-5deg)}
+.brand:hover .visor{transform:scaleX(1.14)}
+
+/* home page only: the boom swings down and the visor wakes, once, on load */
+.afintro .band{animation:afsettle 1100ms cubic-bezier(.34,1.3,.5,1)}
+.afintro .visor{animation:afwake 1100ms ease-out, afblink 5.5s 1.2s infinite}
+@keyframes afsettle{0%{transform:translateY(-5px) scaleX(.86)}100%{transform:none}}
+@keyframes afwake{0%,35%{opacity:.22}100%{opacity:1}}
+
+@media (max-width:620px){ .afmark{width:26px;height:26px} .brand{font-size:17.5px} }
+@media (prefers-reduced-motion: reduce){
+  .afmark *,.brand .afmark,.brand .visor{animation:none!important;transition:none!important}
+}
+
+/* "Agent Foundry" must never break across lines: a wrapped wordmark pushes the
+   navbar to three rows on a phone. */
+.afword{white-space:nowrap}
+.brand{flex:none}
+@media (max-width:620px){
+  .brand{font-size:16px;gap:8px}
+  .afmark{width:24px;height:24px}
+}
+
+/* The wordmark is wider than the old "arsalan" text, which left the phone navbar
+   2px short and wrapped the CTA onto a second row. Buy the room back from the
+   gap and the button rather than dropping the name: nobody knows this brand yet,
+   so a mark-only header on mobile would hide the one thing we want learned. */
+@media (max-width:620px){
+  .navbar .nav{gap:10px;flex-wrap:nowrap}
+  .navbar .nav .btn{gap:9px;padding-left:16px;padding-right:5px;font-size:14.5px}
+  .navbar .nav .btn i{width:32px;height:32px}
+  .navbar .nav .btn svg{width:15px;height:15px}
+}
