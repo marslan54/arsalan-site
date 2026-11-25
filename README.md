@@ -35,4 +35,36 @@ Every figure on the site comes from a real demo or test run, and the cost calcul
 
 ## When the custom domain is ready
 
-Canonical links, share previews, structured data, `sitemap.xml`, `robots.txt` and `404.html` use the full address `https://marslan54.github.io/arsalan-site/`. Do one find-and-replace of that address with the new domain (ending in `/`) across the folder, add a `CNAME` file with the domain, and add the domain to the site-assistant's `ALLOWED_ORIGINS` on Render.
+Canonical links, share previews, structured data, `sitemap.xml`, `robots.txt` and
+`404.html` all carry the full address, so moving host is a content change, not just a
+DNS one. `scripts/use-domain.sh` does the whole rewrite:
+
+```sh
+sh scripts/use-domain.sh agentfoundry.studio
+```
+
+It repoints all 154 absolute URLs, fixes the root-relative paths on `404.html` (a
+project page is served under `/arsalan-site/`, an apex domain is not), writes `CNAME`,
+and bumps the asset versions. Links to the demo pages are deliberately left on
+`github.io`, because that is where they live.
+
+**Do the DNS first.** Until the new host actually answers, the rewrite would point
+search engines at an address that does not resolve. At the registrar, for an apex
+domain, create four A records and four AAAA records on `@`, all to GitHub Pages
+(these are the ranges `api.github.com/meta` lists under `pages`):
+
+| Type | Name | Value |
+| --- | --- | --- |
+| A | @ | 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153 |
+| AAAA | @ | 2606:50c0:8000::153, 2606:50c0:8001::153, 2606:50c0:8002::153, 2606:50c0:8003::153 |
+| CNAME | www | marslan54.github.io. |
+
+Then, in order:
+
+1. `sh scripts/use-domain.sh <domain>`, commit and push.
+2. Repository **Settings → Pages → Custom domain**: enter the domain and save. Leave
+   **Enforce HTTPS** until the certificate is issued, which can take up to an hour.
+3. Add `https://<domain>` to `ALLOWED_ORIGINS` on the site-assistant service on
+   Render, or the chat widget is blocked on the new host and fails silently.
+4. In Google Search Console, add the domain as a new property and resubmit
+   `sitemap.xml`; the github.io property keeps its own history.
