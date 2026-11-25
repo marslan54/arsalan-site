@@ -1122,6 +1122,8 @@ img{display:block;max-width:100%;height:auto}
 .firststep h3{margin:14px 0 10px}
 .firststep p{font-size:15.5px;line-height:1.55;color:var(--dim);max-width:62ch}
 .firststep .btn{flex:none}
+/* the same callout inside the five-days band, set off from the list above it */
+.ringit{margin-top:44px}
 @media (max-width:820px){
   .firststep{grid-template-columns:1fr;gap:22px;padding:26px 24px}
   .firststep .btn{width:100%;justify-content:space-between}

@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=72">
+<link rel="stylesheet" href="site.css?v=73">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -76,6 +76,11 @@
      "@type": "Question",
      "name": "What do you need from me?",
      "acceptedAnswer": {"@type": "Answer", "text": "Time for two calls, the first about 60 to 90 minutes and the walkthrough about 45. Rough numbers on team size and volumes if you have them. No logins, and no access to your systems."}
+    },
+    {
+     "@type": "Question",
+     "name": "Is the demo number a real agent, or a recording?",
+     "acceptedAnswer": {"@type": "Answer", "text": "It is the same voice agent I build for clients, on a real number, loaded with your services and prices. Ask it something it has no answer for and it should say so rather than invent one, which is the behaviour worth testing. The number is mine and it comes down at the end of the audit week. If you go ahead with a build, the agent moves into your own Twilio and Vapi accounts."}
     },
     {
      "@type": "Question",
@@ -216,7 +221,7 @@
       <li>
         <p class="dnum">Day 4</p>
         <h3 class="h-sm">Ranked, and the plan written</h3>
-        <p>Every candidate ordered by return against effort, and the first 30 days written out. This is also where I rule things out, which is often the more valuable half.</p>
+        <p>Every candidate ordered by return against effort, and the first 30 days written out. This is also where I rule things out, which is often the more valuable half, and it is the day your demo number goes live.</p>
       </li>
       <li>
         <p class="dnum">Day 5</p>
@@ -224,6 +229,15 @@
         <p>About forty-five minutes. I take you through the sheet and the plan and answer every question. You keep both, plus the recording.</p>
       </li>
     </ol>
+
+    <aside class="firststep ringit">
+      <div>
+        <p class="eyebrow"><i></i>Day 4, included in the $400</p>
+        <h3 class="h-sm">A number that answers as your business, before you have bought anything.</h3>
+        <p>I load the agent I have already built with your services, your prices and your booking rules, and send you a number. Ring it the way a customer would: ask what a callout costs, try to book a Tuesday morning, push it on something it should refuse to answer. It stays up for the week of the audit, so by the walkthrough you have heard an agent handle your own calls rather than read my description of one.</p>
+      </div>
+      <a class="btn btn-lime" href="https://marslan54.github.io/voice-agent-demo" target="_blank" rel="noopener">Hear a sample call <i><svg><use href="#arw"/></svg></i></a>
+    </aside>
 
     <div class="yourpart">
       <h3 class="h-sm">Your part: two calls, and nothing else</h3>
@@ -334,6 +348,10 @@
       <details>
         <summary>What do you need from me?<span></span></summary>
         <p>Time for two calls, the first about 60 to 90 minutes and the walkthrough about 45. Rough numbers on team size and volumes if you have them. No logins, and no access to your systems.</p>
+      </details>
+      <details>
+        <summary>Is the demo number a real agent, or a recording?<span></span></summary>
+        <p>It is the same voice agent I build for clients, on a real number, loaded with your services and prices. Ask it something it has no answer for and it should say so rather than invent one, which is the behaviour worth testing. The number is mine and it comes down at the end of the audit week. If you go ahead with a build, the agent moves into your own Twilio and Vapi accounts.</p>
       </details>
       <details>
         <summary>What if my problem is bigger than two workflows?<span></span></summary>
