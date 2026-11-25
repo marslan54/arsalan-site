@@ -577,47 +577,44 @@ img{display:block;max-width:100%;height:auto}
 .pane.dark{border-color:rgba(255,255,255,.16)}
 .shot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
 
-/* 1 · AI receptionist — the screen changes while the call is still running */
-.scrA{animation:scrA 7s infinite}
-.scrB{animation:scrB 7s infinite}
-@keyframes scrA{0%,5%{opacity:0;transform:translateY(4%)}11%,43%{opacity:1;transform:none}
-  51%,100%{opacity:0;transform:translateY(-4%)}}
-@keyframes scrB{0%,45%{opacity:0;transform:translateY(5%)}53%,94%{opacity:1;transform:none}100%{opacity:0}}
+/* The three screenshot cards share the stacked-scene model the agent cards use.
+   Baseline, with no JS: the first scene never animates, so the pane is never
+   empty, and each later scene fades in on top of it. The resting style (no
+   animation at all) is therefore the finished state, which is also what
+   reduced-motion and a failed script get. All on the same 9s clock as the rest. */
+.sc{position:absolute;inset:0}
+.sc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.scstage .sc:nth-child(1){z-index:1}
+.scstage .sc:nth-child(2){z-index:2}
+.scstage .sc:nth-child(3){z-index:3}
+
+/* Class selectors, never ids: the live rule below is class-based, and an id here
+   would outrank it and leave the keyframes running against the player. */
+/* two scenes: the second arrives at the halfway mark */
+.sc-two .sc:nth-child(2){animation:scIn2 9s infinite}
+@keyframes scIn2{0%,45%{opacity:0}49%,100%{opacity:1}}
+
+/* three scenes: a third of the cycle each */
+.sc-three .sc:nth-child(2){animation:scIn3a 9s infinite}
+.sc-three .sc:nth-child(3){animation:scIn3b 9s infinite}
+@keyframes scIn3a{0%,30%{opacity:0}34%,100%{opacity:1}}
+@keyframes scIn3b{0%,63%{opacity:0}67%,100%{opacity:1}}
 
 /* 2 · Speed-to-lead — the thread runs on by itself */
 .thread-shot{position:absolute;top:0;left:0;width:100%;height:auto;display:block;animation:thread 7s infinite}
 @keyframes thread{0%,9%{transform:translateY(0)}89%,100%{transform:translateY(-72%)}}
 
-/* 3 · Outbound engine — a reply lands and every remaining step is cancelled */
-.seqA{animation:seqA 7s infinite}
-.seqB{animation:seqB 7s infinite}
-@keyframes seqA{0%,4%{opacity:0}10%,51%{opacity:1}57%,100%{opacity:0}}
-@keyframes seqB{0%,53%{opacity:0}59%,94%{opacity:1}100%{opacity:0}}
+/* badges belong to the scene they describe, so they need no clock of their own */
 .drop{position:absolute;z-index:3;left:50%;top:13px;transform:translateX(-50%);background:var(--clay);color:#2A1C14;
   font-size:10px;font-weight:700;border-radius:6px;padding:5px 11px;white-space:nowrap;
-  box-shadow:0 10px 22px -8px rgba(0,0,0,.45);animation:drop 7s infinite}
-@keyframes drop{0%,49%{opacity:0;transform:translate(-50%,-18px)}
-  57%,92%{opacity:1;transform:translate(-50%,0)}100%{opacity:0;transform:translate(-50%,0)}}
-
-/* 4 · Landing pages — one page after another, the week each is needed */
-.deck img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center}
-.d1{animation:deck1 7s infinite}.d2{animation:deck2 7s infinite}.d3{animation:deck3 7s infinite}
-@keyframes deck1{0%{opacity:0;transform:translateX(14%)}4%,25%{opacity:1;transform:none}
-  31%,100%{opacity:0;transform:translateX(-14%)}}
-@keyframes deck2{0%,27%{opacity:0;transform:translateX(14%)}33%,55%{opacity:1;transform:none}
-  61%,100%{opacity:0;transform:translateX(-14%)}}
-@keyframes deck3{0%,57%{opacity:0;transform:translateX(14%)}63%,94%{opacity:1;transform:none}
-  100%{opacity:0;transform:translateX(-14%)}}
+  box-shadow:0 10px 22px -8px rgba(0,0,0,.45)}
 .count{position:absolute;right:8px;bottom:8px;z-index:3;background:rgba(10,16,13,.84);color:#fff;
   font-size:9.5px;font-weight:650;border-radius:5px;padding:3px 8px;white-space:nowrap}
-.c1{animation:cnt1 7s infinite}.c2{animation:cnt2 7s infinite}.c3{animation:cnt3 7s infinite}
-@keyframes cnt1{0%,4%{opacity:0}8%,25%{opacity:1}30%,100%{opacity:0}}
-@keyframes cnt2{0%,32%{opacity:0}36%,55%{opacity:1}60%,100%{opacity:0}}
-@keyframes cnt3{0%,62%{opacity:0}66%,94%{opacity:1}100%{opacity:0}}
 
 /* with motion off, one honest still per card */
 @media (prefers-reduced-motion:reduce){
-  .scrA,.seqA,.d1,.d2,.old,.tag-old,.sweep,.c1,.c2{opacity:0}
+  .old,.tag-old,.sweep{opacity:0}
+  .scstage .sc{animation:none}
   .thread-shot{transform:translateY(-40%)}
 }
 
@@ -1743,20 +1740,24 @@ img{display:block;max-width:100%;height:auto}
    rises from below into place while the last lifts away above it. The JS marks
    the leaving scene, because CSS cannot tell "not yet shown" from "just shown". */
 .cagstage.cag-live .cag,
-.stlstage.stl-live .stl{
-  opacity:0;transform:translateY(8px);
+.stlstage.stl-live .stl,
+.scstage.sc-live .sc,
+.scstage.sc-live .sc:nth-child(n){
+  animation:none;opacity:0;transform:translateY(8px);
   transition:opacity .34s cubic-bezier(.2,.7,.2,1) .1s,
              transform .38s cubic-bezier(.2,.7,.2,1) .1s}
 .cagstage.cag-live .cag.on,
-.stlstage.stl-live .stl.on{opacity:1;transform:none}
+.stlstage.stl-live .stl.on,
+.scstage.sc-live .sc.on{opacity:1;transform:none}
 .cagstage.cag-live .cag.out,
-.stlstage.stl-live .stl.out{
+.stlstage.stl-live .stl.out,
+.scstage.sc-live .sc.out{
   opacity:0;transform:translateY(-8px);
   transition:opacity .2s cubic-bezier(.4,0,1,1), transform .24s cubic-bezier(.4,0,1,1)}
 
 @media (prefers-reduced-motion: reduce){
-  .cagstage.cag-live .cag,.stlstage.stl-live .stl,
-  .cagstage.cag-live .cag.on,.stlstage.stl-live .stl.on,
-  .cagstage.cag-live .cag.out,.stlstage.stl-live .stl.out{transition:none;transform:none}
+  .cagstage.cag-live .cag,.stlstage.stl-live .stl,.scstage.sc-live .sc,
+  .cagstage.cag-live .cag.on,.stlstage.stl-live .stl.on,.scstage.sc-live .sc.on,
+  .cagstage.cag-live .cag.out,.stlstage.stl-live .stl.out,.scstage.sc-live .sc.out{transition:none;transform:none}
 }
 }

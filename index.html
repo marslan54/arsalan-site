@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=73">
+<link rel="stylesheet" href="site.css?v=74">
 <script type="application/ld+json">{
  "@context": "https://schema.org",
  "@graph": [
@@ -641,9 +641,9 @@
       <div class="pack">
         <div class="pv pv-dark" aria-hidden="true">
           <div class="pv-in media-pv">
-            <div class="pane dark">
-              <img class="shot scrA" src="assets/call-live.jpg" alt="A live call console showing Ava answering for Brightline Heating, with the caller's transcript, the approved price list and tomorrow's diary">
-              <img class="shot scrB" src="assets/call-booked.jpg" alt="The same call console after the call, with the job written into the 10:00 slot and a confirmation text sent">
+            <div class="pane dark scstage sc-two" id="rxstage">
+              <div class="sc"><img class="shot" src="assets/call-live.jpg" alt="A live call console showing Ava answering for Brightline Heating, with the caller's transcript, the approved price list and tomorrow's diary"></div>
+              <div class="sc"><img class="shot" src="assets/call-booked.jpg" alt="The same call console after the call, with the job written into the 10:00 slot and a confirmation text sent"></div>
             </div>
             <span class="pvchip lime">Booked mid-call · Tue 10 AM</span>
           </div>
@@ -722,10 +722,9 @@
       <div class="pack">
         <div class="pv pv-light" aria-hidden="true">
           <div class="pv-in media-pv">
-            <div class="pane">
-              <img class="shot seqA" src="assets/seq-run.jpg" alt="An outbound sequence board showing contacts, their step progress and the QA gate">
-              <img class="shot seqB" src="assets/seq-stop.jpg" alt="The same board the moment a prospect replies, with every remaining step cancelled">
-              <span class="drop">Tom Vickers replied</span>
+            <div class="pane scstage sc-two" id="obstage">
+              <div class="sc"><img class="shot" src="assets/seq-run.jpg" alt="An outbound sequence board showing contacts, their step progress and the QA gate"></div>
+              <div class="sc"><img class="shot" src="assets/seq-stop.jpg" alt="The same board the moment a prospect replies, with every remaining step cancelled"><span class="drop">Tom Vickers replied</span></div>
             </div>
             <span class="pvchip clay">Every remaining step cancelled</span>
           </div>
@@ -757,13 +756,10 @@
           <div class="pv-in site-pv">
             <div class="win">
               <div class="win-bar"><i></i><i></i><i></i></div>
-              <div class="stage deck">
-                <img class="d1" src="assets/lp-dental.jpg" alt="A landing page built for a dental practice">
-                <img class="d2" src="assets/lp-gym.jpg" alt="A landing page built for a barbell gym">
-                <img class="d3" src="assets/lp-roof.jpg" alt="A landing page built for a roofing company">
-                <span class="count c1">Northgate Dental · live Tuesday</span>
-                <span class="count c2">Barbell Row · live Wednesday</span>
-                <span class="count c3">Caldwell Roofing · live Friday</span>
+              <div class="stage deck scstage sc-three" id="lpstage">
+                <div class="sc"><img src="assets/lp-dental.jpg" alt="A landing page built for a dental practice"><span class="count">Northgate Dental · live Tuesday</span></div>
+                <div class="sc"><img src="assets/lp-gym.jpg" alt="A landing page built for a barbell gym"><span class="count">Barbell Row · live Wednesday</span></div>
+                <div class="sc"><img src="assets/lp-roof.jpg" alt="A landing page built for a roofing company"><span class="count">Caldwell Roofing · live Friday</span></div>
               </div>
             </div>
             <span class="pvchip lime">Three pages, one week · 23/23 QA checks each</span>
@@ -1162,6 +1158,6 @@
     </div>
   </div>
 </footer>
-<script src="site.js?v=49"></script>
+<script src="site.js?v=50"></script>
 </body>
 </html>

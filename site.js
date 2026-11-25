@@ -269,4 +269,15 @@ document.querySelectorAll('[data-flow]').forEach(flow => {
     const p = player(stl, { scene:'.stl', dot:'.stldots i', holds:[2800,2800,3400], live:'stl-live' });
     document.getElementById('stlagain')?.addEventListener('click', () => { p.show(0); p.go(); });
   }
+
+  // The three screenshot cards run on the same player and the same 9s clock, so the
+  // row advances together instead of four stages drifting against each other. They
+  // have no buttons: the CSS baseline already loops, and this only takes over the
+  // timing and gives them the same one-direction slide as the cards above.
+  [['rxstage', [4400, 4600]],
+   ['obstage', [4400, 4600]],
+   ['lpstage', [3000, 3000, 3000]]].forEach(([id, holds]) => {
+    const el = document.getElementById(id);
+    if (el) player(el, { scene:'.sc', dot:'.nodots', holds, live:'sc-live' });
+  });
 })();
