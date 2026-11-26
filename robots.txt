@@ -1,4 +1,4 @@
-# Agent Foundry — https://marslan54.github.io/arsalan-site/
+# Agent Foundry — https://agentfoundry.studio/
 
 User-agent: *
 Allow: /
@@ -32,4 +32,4 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://marslan54.github.io/arsalan-site/sitemap.xml
+Sitemap: https://agentfoundry.studio/sitemap.xml
