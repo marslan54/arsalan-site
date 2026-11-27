@@ -70,6 +70,7 @@ still.addEventListener('change', runClock);
    --------------------------------------------------------------------------- */
 const CONFIG = {
   calUrl:   "https://cal.com/muhammad-arsalan-vmbla2/scoping-call",
+  apiUrl:   "https://site-assistant-3a51.onrender.com",   // takes the contact form
   email:    "",   // e.g. "you@yourdomain.com"
   whatsapp: "",   // digits only, e.g. "923001234567"
   upwork:   "https://www.upwork.com/freelancers/~010d986b146a33f9f5"
@@ -268,6 +269,72 @@ document.querySelectorAll('[data-flow]').forEach(flow => {
   if (stl){
     const p = player(stl, { scene:'.stl', dot:'.stldots i', holds:[2800,2800,3400], live:'stl-live' });
     document.getElementById('stlagain')?.addEventListener('click', () => { p.show(0); p.go(); });
+  }
+
+  // The contact form. The API is on a free Render instance that sleeps, so the
+  // first send after a quiet spell can take the better part of a minute: say so
+  // rather than letting it look broken, and never clear what they typed.
+  const cform = document.getElementById('cform');
+  if (cform && CONFIG.apiUrl){
+    const status = document.getElementById('cfstatus');
+    const send = document.getElementById('cfsend');
+    const label = send ? send.innerHTML : '';
+    let busy = false;
+
+    const say = (text, kind) => {
+      if (!status) return;
+      status.textContent = text;
+      status.className = 'cform-status' + (kind ? ' ' + kind : '');
+    };
+
+    cform.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (busy) return;
+
+      const data = Object.fromEntries(new FormData(cform).entries());
+      // Checked here only to answer faster than a round trip; the API decides.
+      if (!String(data.name || '').trim())    return say('Please add your name.', 'err');
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(String(data.email || '').trim()))
+        return say('That email address does not look right.', 'err');
+      if (!String(data.message || '').trim()) return say('Please write a line about what is going wrong.', 'err');
+
+      busy = true;
+      if (send){ send.disabled = true; send.textContent = 'Sending...'; }
+      say('Sending...');
+      const slow = setTimeout(() => { if (busy) say('Still sending. The server sleeps when it is idle, so the first message can take up to a minute.'); }, 4000);
+
+      try {
+        const res = await fetch(CONFIG.apiUrl.replace(/\/$/, '') + '/v1/contact', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({
+            name: data.name, email: data.email, company: data.company,
+            message: data.message, website: data.website, pageUrl: location.href
+          })
+        });
+        clearTimeout(slow);
+        if (res.ok){
+          const done = document.createElement('div');
+          done.className = 'cform-done';
+          done.setAttribute('role', 'status');
+          done.innerHTML = '<h3 class="h-sm">Thank you, it reached me.</h3>' +
+            '<p>I read these myself and reply within one working day, Monday to Friday. ' +
+            'If it is urgent, book a time instead and we can talk sooner.</p>' +
+            '<p style="margin-top:16px"><a class="btn btn-line" href="index.html#contact" data-book>Book 20 minutes</a></p>';
+          cform.replaceWith(done);
+          done.scrollIntoView({ block: 'center', behavior: 'smooth' });
+          return;
+        }
+        const body = await res.json().catch(() => ({}));
+        say(body.error || 'That did not send. Please try again, or reach me on Upwork.', 'err');
+      } catch (err) {
+        clearTimeout(slow);
+        say('That did not send, which usually means the connection dropped. Your message is still here, so try again, or reach me on Upwork.', 'err');
+      } finally {
+        busy = false;
+        if (send){ send.disabled = false; send.innerHTML = label; }
+      }
+    });
   }
 
   // The three screenshot cards run on the same player and the same 9s clock, so the

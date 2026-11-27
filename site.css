@@ -1761,3 +1761,37 @@ img{display:block;max-width:100%;height:auto}
   .cagstage.cag-live .cag.out,.stlstage.stl-live .stl.out,.scstage.sc-live .sc.out{transition:none;transform:none}
 }
 }
+
+/* ---------- the contact form ----------
+   Fields reuse .field / .flabel from the calculators. The status line is a
+   live region: a sighted visitor sees the button change, a screen reader
+   needs to be told, and both need to know a cold server can take a while. */
+.cform{margin-top:40px;max-width:720px}
+.cform-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}
+.cform .field textarea{width:100%;font:inherit;font-size:16px;color:var(--forest);
+  background:var(--paper);border:1px solid var(--line-warm);border-radius:12px;
+  padding:12px 14px;box-sizing:border-box;resize:vertical;min-height:132px;line-height:1.55}
+.cform .field textarea::placeholder{color:var(--dim);opacity:.72}
+.cform .field textarea:focus-visible{outline:3px solid var(--moss);outline-offset:2px}
+.cform-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.cform-send{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:26px}
+.cform-note{font-size:14px;line-height:1.55;color:var(--dim);max-width:40ch;margin:0}
+.cform button[disabled]{opacity:.62;cursor:progress}
+
+/* Reserved whether or not it holds text, so sending does not shift the page. */
+.cform-status{margin-top:18px;min-height:1.5em;font-size:15px;line-height:1.5}
+.cform-status.err{color:var(--clay)}
+.cform-status.ok{color:var(--forest);font-weight:600}
+.band-cream .cform-status.err{color:#9A3412}
+
+/* The whole form is replaced on success: nothing left to re-submit by mistake. */
+.cform-done{margin-top:40px;max-width:620px;background:var(--paper);
+  border:1px solid var(--line-warm);border-radius:var(--r);padding:30px 32px}
+.cform-done h3{margin-bottom:10px}
+.cform-done p{color:var(--dim);font-size:15.5px;line-height:1.6}
+
+@media (max-width:620px){
+  .cform-grid{grid-template-columns:1fr}
+  .cform-send{gap:14px}
+  .cform-send .btn{width:100%;justify-content:space-between}
+}
