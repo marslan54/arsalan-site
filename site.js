@@ -76,6 +76,41 @@ const CONFIG = {
   upwork:   "https://www.upwork.com/freelancers/~010d986b146a33f9f5"
 };
 
+// The phone menu. The links are in the DOM on every width; this only opens and
+// closes the panel they fold into below 900px.
+(function(){
+  const nav = document.querySelector('.nav');
+  const btn = nav && nav.querySelector('.navtoggle');
+  const menu = document.getElementById('navmenu');
+  if (!nav || !btn || !menu) return;
+
+  const setOpen = (open) => {
+    nav.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  };
+
+  btn.addEventListener('click', () => setOpen(!nav.classList.contains('open')));
+
+  // Going somewhere should not leave the panel hanging over the new page, and
+  // an in-page link (#packages) does not reload, so close it by hand.
+  menu.addEventListener('click', (e) => { if (e.target.closest('a')) setOpen(false); });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.classList.contains('open')){ setOpen(false); btn.focus(); }
+  });
+
+  document.addEventListener('click', (e) => {
+    if (nav.classList.contains('open') && !nav.contains(e.target)) setOpen(false);
+  });
+
+  // Dragging the window past the breakpoint with the panel open would leave the
+  // desktop bar in the open state, which changes nothing visually but leaves
+  // aria-expanded lying to a screen reader.
+  const wide = window.matchMedia('(min-width:901px)');
+  const sync = () => { if (wide.matches) setOpen(false); };
+  wide.addEventListener ? wide.addEventListener('change', sync) : wide.addListener(sync);
+})();
+
 (function(){
   const qual = { problem:"", timing:"", stack:"" };
   window.__qual = qual;
