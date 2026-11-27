@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=77">
+<link rel="stylesheet" href="site.css?v=79">
 <script type="application/ld+json">{
  "@context": "https://schema.org",
  "@graph": [
@@ -414,6 +414,7 @@
     <h2 class="band-quote">You've Lost a Job To<br class="br-d">
       <span class="hl">&lsquo;Whoever Picked Up First&rsquo;</span><br class="br-d">
       More Times Than You'd Like to Admit.</h2>
+    <p class="band-proof">Between a quarter and a third of calls to home-service businesses go unanswered: Invoca measured 27% across 60 million calls, CallRail 28% across 225,000 businesses. You have already paid to make those phones ring.</p>
     <div class="btns btns-mid">
       <a class="btn btn-lime" href="#contact" data-book>Book a 20-min call <i><svg><use href="#arw"/></svg></i></a>
       <a class="btn btn-line" href="#packages">See the packages <i><svg><use href="#arw"/></svg></i></a>
@@ -433,6 +434,14 @@
         <p>It quoted a price nobody approved. Now nobody trusts it anywhere near a customer.</p>
       </div>
     </div>
+    <aside class="firststep">
+      <div>
+        <p class="eyebrow"><i></i>Not sure which one, or whether any of it</p>
+        <h3 class="h-sm">Then do not start with a build. Start with the audit.</h3>
+        <p>Five working days, $400 flat. I take your two most expensive workflows apart, put a monthly cost on them, and rank what is actually worth automating. It comes off the build if you go ahead, and you get it back if the answer turns out to be no.</p>
+      </div>
+      <a class="btn btn-lime" href="audit.html">See the audit <i><svg><use href="#arw"/></svg></i></a>
+    </aside>
   </div>
 </section>
 
@@ -456,44 +465,7 @@
           <div class="ba-arrow"><svg width="20" height="20"><use href="#arw"/></svg></div>
           <div class="ba-col after"><span>Now</span><p>Ava answers every call, quotes from an approved price list, books into Cal.com and texts the confirmation.</p></div>
         </div>
-        <div class="flow" data-flow>
-          <div class="flow-head"><span class="flow-k">How it runs</span>
-            <span class="flow-hint">Step through it</span></div>
-          <ol class="flow-rail" role="tablist">
-            <li><button type="button" role="tab" aria-selected="true" data-i="0"><b>1</b><span>Call arrives</span></button></li>
-            <li><button type="button" role="tab" aria-selected="false" data-i="1"><b>2</b><span>Ava answers</span></button></li>
-            <li><button type="button" role="tab" aria-selected="false" data-i="2"><b>3</b><span>Quotes from the list</span></button></li>
-            <li><button type="button" role="tab" aria-selected="false" data-i="3"><b>4</b><span>Books while they talk</span></button></li>
-            <li><button type="button" role="tab" aria-selected="false" data-i="4"><b>5</b><span>Tested before it answers</span></button></li>
-          </ol>
-          <div class="flow-panels">
-            <div class="flow-p on" data-i="0" role="tabpanel">
-              <h4>Call arrives</h4>
-              <p>Twilio picks up and streams the audio straight to the agent. After-hours calls and the ones that ring out while the crew is on site both land here, so none of them reach voicemail.</p>
-              <span class="flow-tool">Twilio</span>
-            </div>
-            <div class="flow-p" data-i="1" role="tabpanel">
-              <h4>Ava answers</h4>
-              <p>A voice agent scripted to this business: the services it offers, the hours it keeps, and the questions a good receptionist asks before promising anything.</p>
-              <span class="flow-tool">Vapi</span>
-            </div>
-            <div class="flow-p" data-i="2" role="tabpanel">
-              <h4>Quotes from the list</h4>
-              <p>Every price comes from an approved list in the database. Ask about something that isn't on it and Ava says she'll have someone call back, rather than inventing a figure.</p>
-              <span class="flow-tool">Postgres</span>
-            </div>
-            <div class="flow-p" data-i="3" role="tabpanel">
-              <h4>Books while they talk</h4>
-              <p>A free slot is checked and held in Cal.com during the call, so two callers can't be given the same morning. The caller hears the confirmed time before hanging up.</p>
-              <span class="flow-tool">Cal.com</span>
-            </div>
-            <div class="flow-p" data-i="4" role="tabpanel">
-              <h4>Tested before it answers</h4>
-              <p>Simulated callers push on price, interrupt, change their mind and wander off-topic. The suite runs offline, and the agent only ships when all of it passes.</p>
-              <span class="flow-tool">29 offline tests</span>
-            </div>
-          </div>
-        </div>
+        
         <div class="stats">
           <div class="stat"><b>29</b><span>tests, run offline</span></div>
           <div class="stat"><b>0</b><span>double-bookings under load</span></div>
@@ -517,44 +489,7 @@
           <div class="ba-arrow"><svg width="20" height="20"><use href="#arw"/></svg></div>
           <div class="ba-col after"><span>Now</span><p>A text goes out in seconds, qualifies the job, books it and writes the lead into the CRM.</p></div>
         </div>
-        <div class="flow" data-flow>
-          <div class="flow-head"><span class="flow-k">How it runs</span>
-            <span class="flow-hint">Step through it</span></div>
-          <ol class="flow-rail" role="tablist">
-            <li><button type="button" role="tab" aria-selected="true" data-i="0"><b>1</b><span>The trigger</span></button></li>
-            <li><button type="button" role="tab" aria-selected="false" data-i="1"><b>2</b><span>First text out</span></button></li>
-            <li><button type="button" role="tab" aria-selected="false" data-i="2"><b>3</b><span>Qualifies the job</span></button></li>
-            <li><button type="button" role="tab" aria-selected="false" data-i="3"><b>4</b><span>Books it and files it</span></button></li>
-            <li><button type="button" role="tab" aria-selected="false" data-i="4"><b>5</b><span>Graded before it ships</span></button></li>
-          </ol>
-          <div class="flow-panels">
-            <div class="flow-p on" data-i="0" role="tabpanel">
-              <h4>The trigger</h4>
-              <p>A missed call or a form fill fires a webhook into n8n within a second. No polling, no queue to wait behind, no one needing to notice it happened.</p>
-              <span class="flow-tool">n8n</span>
-            </div>
-            <div class="flow-p" data-i="1" role="tabpanel">
-              <h4>First text out</h4>
-              <p>A reply goes out while they are still holding the phone, and it asks the one question that decides whether this is a job worth driving to.</p>
-              <span class="flow-tool">Twilio</span>
-            </div>
-            <div class="flow-p" data-i="2" role="tabpanel">
-              <h4>Qualifies the job</h4>
-              <p>It works through the questions the owner chose — what, where, how urgent. Anything off-script stops and hands over with the whole thread attached.</p>
-              <span class="flow-tool">n8n</span>
-            </div>
-            <div class="flow-p" data-i="3" role="tabpanel">
-              <h4>Books it and files it</h4>
-              <p>A slot is offered and held, the lead is written to the CRM with every message, and the owner gets a Slack ping the moment the job is in the diary.</p>
-              <span class="flow-tool">HubSpot</span>
-            </div>
-            <div class="flow-p" data-i="4" role="tabpanel">
-              <h4>Graded before it ships</h4>
-              <p>23 scripted conversations, including the awkward ones, are run and graded before it is allowed near a real lead. 150 of 150 checks pass.</p>
-              <span class="flow-tool">DeepEval</span>
-            </div>
-          </div>
-        </div>
+        
         <div class="stats">
           <div class="stat"><b>150/150</b><span>checks passing</span></div>
           <div class="stat"><b>23</b><span>scripted conversations graded</span></div>
@@ -578,44 +513,7 @@
           <div class="ba-arrow"><svg width="20" height="20"><use href="#arw"/></svg></div>
           <div class="ba-col after"><span>Now</span><p>Research, write, pass a QA gate, send. A reply stops every channel at once, and one engine runs many clients.</p></div>
         </div>
-        <div class="flow" data-flow>
-          <div class="flow-head"><span class="flow-k">How it runs</span>
-            <span class="flow-hint">Step through it</span></div>
-          <ol class="flow-rail" role="tablist">
-            <li><button type="button" role="tab" aria-selected="true" data-i="0"><b>1</b><span>Research</span></button></li>
-            <li><button type="button" role="tab" aria-selected="false" data-i="1"><b>2</b><span>Write</span></button></li>
-            <li><button type="button" role="tab" aria-selected="false" data-i="2"><b>3</b><span>The QA gate</span></button></li>
-            <li><button type="button" role="tab" aria-selected="false" data-i="3"><b>4</b><span>Send and watch</span></button></li>
-            <li><button type="button" role="tab" aria-selected="false" data-i="4"><b>5</b><span>Evals before the first send</span></button></li>
-          </ol>
-          <div class="flow-panels">
-            <div class="flow-p on" data-i="0" role="tabpanel">
-              <h4>Research</h4>
-              <p>Each prospect is enriched from their own public footprint — role, company, recent changes — so the email has something true to open with.</p>
-              <span class="flow-tool">Clay</span>
-            </div>
-            <div class="flow-p" data-i="1" role="tabpanel">
-              <h4>Write</h4>
-              <p>Drafted per prospect from that research, not poured into a template. The same engine runs many clients without a rebuild for each one.</p>
-              <span class="flow-tool">Claude</span>
-            </div>
-            <div class="flow-p" data-i="2" role="tabpanel">
-              <h4>The QA gate</h4>
-              <p>Any number, claim or case study that isn't in the client's own proof blocks the send. This is the step that makes the rest safe to automate.</p>
-              <span class="flow-tool">Custom checks</span>
-            </div>
-            <div class="flow-p" data-i="3" role="tabpanel">
-              <h4>Send and watch</h4>
-              <p>Sending runs on warmed domains inside daily caps. One reply cancels email, call task and social step at once, within the same second.</p>
-              <span class="flow-tool">Instantly</span>
-            </div>
-            <div class="flow-p" data-i="4" role="tabpanel">
-              <h4>Evals before the first send</h4>
-              <p>The whole set runs against the live model, not a mock, so the thing that was graded is the thing that sends.</p>
-              <span class="flow-tool">94/94 on real Claude</span>
-            </div>
-          </div>
-        </div>
+        
         <div class="stats">
           <div class="stat"><b>35/35</b><span>acceptance checks</span></div>
           <div class="stat"><b>94/94</b><span>evals on real Claude</span></div>
@@ -652,7 +550,6 @@
         <p class="pain">The van is on a job, the phone is ringing, and the caller is already dialling the next name on the list.</p>
         <h3 class="h-sm">AI receptionist</h3>
         <p>Answers your phone around the clock, quotes from your price list, books into your calendar and texts confirmations.</p>
-        <p class="worth"><b>What it is worth:</b> Between a quarter and a third of calls to home-service businesses go unanswered — Invoca found 27% across 60 million calls, CallRail 28% across 225,000 businesses. You have already paid to make those phones ring. Check your own call log before you trust anyone's average, mine included.</p>
         <div class="price"><b>$3,500</b><span>from</span></div>
         <p class="when">Live in 2 weeks</p>
         <details class="inc">
@@ -702,7 +599,6 @@
         <p class="pain">A form arrives at 7pm. You see it at 8am. They booked someone else at 7:10.</p>
         <h3 class="h-sm">Speed-to-lead</h3>
         <p>Every missed call and form fill answered by text in seconds, qualified, booked and written to your CRM.</p>
-        <p class="worth"><b>What it is worth:</b> You are paying for those leads either way. This decides whether you or the next company on the list gets to speak first.</p>
         <div class="price"><b>$2,000</b><span>from</span></div>
         <p class="when">Live in 1 week</p>
         <details class="inc">
@@ -733,7 +629,6 @@
         <p class="pain">You need more pipeline, and the person who would build it is the person already doing everything else.</p>
         <h3 class="h-sm">Outbound engine</h3>
         <p>Research, personalised sequences behind a QA gate, and every channel stopping the moment someone replies.</p>
-        <p class="worth"><b>What it is worth:</b> One engine runs many clients without a rebuild each time, and the QA gate means nothing goes out in your name that your own evidence cannot back.</p>
         <div class="price"><b>$6,000</b><span>from</span></div>
         <p class="when">Live in 3 to 4 weeks</p>
         <details class="inc">
@@ -750,76 +645,6 @@
           </ul>
           <p class="not">Not included: Apollo, Clay and Instantly subscriptions, on your own accounts.</p>
           <a class="btn btn-lime inc-cta" href="#contact" data-book data-pack="Outbound engine">Book a call about this <i><svg><use href="#arw"/></svg></i></a>
-        </details>
-      </div>
-      <div class="pack">
-        <div class="pv pv-light" aria-hidden="true">
-          <div class="pv-in site-pv">
-            <div class="win">
-              <div class="win-bar"><i></i><i></i><i></i></div>
-              <div class="stage deck scstage sc-three" id="lpstage">
-                <div class="sc"><img src="assets/lp-dental.jpg" alt="A landing page built for a dental practice"><span class="count">Northgate Dental · live Tuesday</span></div>
-                <div class="sc"><img src="assets/lp-gym.jpg" alt="A landing page built for a barbell gym"><span class="count">Barbell Row · live Wednesday</span></div>
-                <div class="sc"><img src="assets/lp-roof.jpg" alt="A landing page built for a roofing company"><span class="count">Caldwell Roofing · live Friday</span></div>
-              </div>
-            </div>
-            <span class="pvchip lime">Three pages, one week · 23/23 QA checks each</span>
-          </div>
-        </div>
-        <p class="pain">The cold snap is this week. The page for it is three weeks out.</p>
-        <h3 class="h-sm">Landing pages</h3>
-        <p>Pages live the moment you need them. Built from a reference page, your brand rules and a short brief, then checked before you see them.</p>
-        <p class="worth"><b>What it is worth:</b> Campaigns go live when the weather does, rather than when a developer has a gap.</p>
-        <div class="price"><b>$1,000</b><span>from</span></div>
-        <p class="when">Live in 5 days</p>
-        <details class="inc">
-          <summary>What's included <i><svg><use href="#arw"/></svg></i></summary>
-          <ul>
-            <li>One page, written and built from your brief and your brand rules</li>
-            <li>Checked at phone, tablet and desktop widths, not just resized</li>
-            <li>Form or booking wired to wherever your leads already arrive</li>
-            <li>23 automated checks before you see it: links, speed, contrast, metadata</li>
-            <li>Deployed to your domain, or to mine until yours is ready</li>
-            <li>Two rounds of changes after the first draft</li>
-          </ul>
-          <p class="not">Not included: paid stock photography and any ad spend.</p>
-          <a class="btn btn-lime inc-cta" href="#contact" data-book data-pack="Landing pages">Book a call about this <i><svg><use href="#arw"/></svg></i></a>
-        </details>
-      </div>
-      <div class="pack">
-        <div class="pv pv-light" aria-hidden="true">
-          <div class="pv-in site-pv">
-            <div class="win">
-              <div class="win-bar"><i></i><i></i><i></i></div>
-              <div class="stage">
-                <div class="old"><img src="assets/old-site.jpg" alt="A dated heating company website from the 2000s"></div>
-                <span class="tag-old">Sorry, this is our old site</span>
-                <span class="sweep"></span>
-                <div class="new"><img src="assets/new-site.jpg" alt="The same heating company rebuilt as a modern one-page site"></div>
-              </div>
-            </div>
-            <span class="pvchip lime">Live · yours to edit after</span>
-          </div>
-        </div>
-        <p class="pain">Your site still lists a service you stopped offering in 2023, because changing it means emailing whoever built it.</p>
-        <h3 class="h-sm">Signature site</h3>
-        <p>The whole site, built to match the company you are now. Written, built and tested by me, then handed over so your team can add pages without waiting on a developer.</p>
-        <p class="worth"><b>What it is worth:</b> You get the repository and the ability to change a price yourself, on a Tuesday, without asking anyone.</p>
-        <div class="price"><b>$4,000</b><span>from</span></div>
-        <p class="when">Live in 3 to 4 weeks</p>
-        <details class="inc">
-          <summary>What's included <i><svg><use href="#arw"/></svg></i></summary>
-          <ul>
-            <li>Up to eight pages, written with you rather than filled with placeholder text</li>
-            <li>Plain HTML or your existing stack, so there is no page-builder to pay for</li>
-            <li>The chat assistant or a booking flow built in, if you want one</li>
-            <li>Analytics, sitemap, metadata and redirects from the old site</li>
-            <li>The same 23 automated checks, run on every page</li>
-            <li>A recorded handover walkthrough, plus the repository in your name</li>
-            <li>Thirty days of fixes after launch</li>
-          </ul>
-          <p class="not">Not included: domain and hosting fees, which stay in your own name.</p>
-          <a class="btn btn-lime inc-cta" href="#contact" data-book data-pack="Signature site">Book a call about this <i><svg><use href="#arw"/></svg></i></a>
         </details>
       </div>
       <div class="pack">
@@ -862,7 +687,6 @@
         <p class="pain">The job eating a day a week is specific to your business, so nobody sells a product for it.</p>
         <h3 class="h-sm">Custom AI agents</h3>
         <p>One agent, built for one job you actually have. Reading documents into your system, triaging an inbox, answering from your own files with sources, or whatever the repetitive thing is.</p>
-        <p class="worth"><b>What it is worth:</b> Off-the-shelf tools cover the jobs every business shares. The work that is specific to you is usually the work nobody has automated, which is why it is still being done by hand.</p>
         <div class="price"><b>$2,500</b><span>from</span></div>
         <p class="when">Two to four weeks, priced after a scoping call</p>
         <details class="inc">
@@ -908,48 +732,11 @@
       <div class="team-head">
         <p class="eyebrow"><i></i>All three, working together</p>
         <h3 class="h-sm">A team of agents, not three tools that ignore each other.</h3>
-        <p>Most businesses end up with a phone bot from one vendor, a texting tool from another and a
-        sequencer from a third. Each one works. Together they double-book, text someone who already replied,
-        and keep chasing a lead who signed last week. The handover between them is where this goes wrong, and
-        it is the part nobody sells you.</p>
-      </div>
-
-      <div class="chain" aria-label="How work passes between the three agents">
-        <div class="tnode">
-          <p class="tk">Answers</p>
-          <h4>The phone agent</h4>
-          <p>Picks up day or night, qualifies the caller and books the job while they are still on the line.</p>
-        </div>
-        <div class="tarrow" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#arw"/></svg></div>
-        <div class="tnode">
-          <p class="tk">Catches</p>
-          <h4>The speed-to-lead texter</h4>
-          <p>Anything the phone agent could not finish, and every missed call or web form, gets a text in seconds and a real conversation after it.</p>
-        </div>
-        <div class="tarrow" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#arw"/></svg></div>
-        <div class="tnode">
-          <p class="tk">Fills</p>
-          <h4>The outbound engine</h4>
-          <p>When the diary has gaps, it goes and finds the work, through a QA gate that blocks anything it cannot prove.</p>
-        </div>
-      </div>
-
-      <div class="team-why">
-        <div>
-          <h4>One place the truth lives</h4>
-          <p>All three read and write the same record of a customer. The phone agent sees that the texter already
-          offered Tuesday. Nothing is booked twice.</p>
-        </div>
-        <div>
-          <h4>One reply stops everything</h4>
-          <p>Somebody answers on any channel and every remaining step cancels across all three, in the same second.
-          This is the single most common way a stack of separate tools embarrasses you.</p>
-        </div>
-        <div>
-          <h4>One eval set over the whole chain</h4>
-          <p>Tested end to end, not agent by agent. A handover that works in isolation and fails in sequence is
-          the failure you would otherwise find in front of a customer.</p>
-        </div>
+        <p>A phone bot from one vendor, a texting tool from another and a sequencer from a third will
+        double-book, text someone who already replied, and keep chasing a lead who signed last week. The
+        handover between them is the part nobody sells you, and it is what this buys: one shared record of
+        the customer, a reply on any channel cancelling every remaining step across all three, and one eval
+        set run over the whole chain. <a href="services.html">How the handover works</a>.</p>
       </div>
 
       <div class="team-buy">
@@ -969,16 +756,10 @@
       </div>
     </section>
 
+    <p class="pack-note"><b>Also:</b> a landing page built and QA-checked in five days from $1,000, and a signature site in three to four weeks from $4,000. <a href="services.html">Both are on the services page</a>.</p>
     <p class="pack-note">Something else in mind? Anything custom is quoted after a short call, once the scope is clear. Ongoing work beyond a build runs at $45 an hour.</p>
 
-    <aside class="firststep">
-      <div>
-        <p class="eyebrow"><i></i>Not sure which one, or whether any of it</p>
-        <h3 class="h-sm">Then do not start with a build. Start with the audit.</h3>
-        <p>Five working days, $400 flat. I take your two most expensive workflows apart, put a monthly cost on them, and rank what is actually worth automating. It comes off the build if you go ahead, and you get it back if the answer turns out to be no.</p>
-      </div>
-      <a class="btn btn-lime" href="audit.html">See the audit <i><svg><use href="#arw"/></svg></i></a>
-    </aside>
+    
   </div>
 </section>
 
@@ -1159,6 +940,6 @@
     </div>
   </div>
 </footer>
-<script src="site.js?v=53"></script>
+<script src="site.js?v=54"></script>
 </body>
 </html>

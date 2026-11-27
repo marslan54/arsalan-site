@@ -1130,7 +1130,9 @@ img{display:block;max-width:100%;height:auto}
 }
 
 /* the step before a build, sitting under the price list where the hesitation is */
-.firststep{margin-top:22px;background:var(--lime-pale);border-radius:var(--r);
+/* It now sits inside .wrap.mid, which centres its children; the card reads as
+   a block of copy and has to stay ranged left. */
+.firststep{text-align:left;margin-top:40px;background:var(--lime-pale);border-radius:var(--r);
   padding:30px 32px;display:grid;grid-template-columns:minmax(0,1fr) auto;
   gap:34px;align-items:center}
 .firststep h3{margin:14px 0 10px}
@@ -1847,3 +1849,9 @@ img{display:block;max-width:100%;height:auto}
 /* Stated after the base rule above, which would otherwise win on source order
    and leave the button invisible on exactly the widths that need it. */
 @media (max-width:900px){ .navtoggle{display:inline-flex} }
+
+/* The sourced figure that used to sit inside a package card, where nobody
+   reaching the top of the page would see it. It is the hook, so it belongs
+   under the problem headline. */
+.band-proof{max-width:60ch;margin:22px auto 0;font-size:16.5px;line-height:1.6;color:var(--dim)}
+@media (max-width:620px){ .band-proof{font-size:15.5px;text-align:left} }
