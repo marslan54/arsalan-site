@@ -111,6 +111,20 @@ const CONFIG = {
   wide.addEventListener ? wide.addEventListener('change', sync) : wide.addListener(sync);
 })();
 
+// The bottom call strip would otherwise sit under the hero's own call button,
+// showing the same thing twice. It slides in once that button scrolls away.
+// Without IntersectionObserver, or on a page with no hero, it simply stays put.
+(function(){
+  const bar = document.querySelector('.callbar');
+  const heroCta = document.querySelector('.hero .btns');
+  if (!bar || !heroCta || !('IntersectionObserver' in window)) return;
+  bar.classList.add('callbar-auto');
+  new IntersectionObserver(
+    ([e]) => bar.classList.toggle('callbar-up', !e.isIntersecting),
+    { threshold: 0 }
+  ).observe(heroCta);
+})();
+
 (function(){
   const qual = { problem:"", timing:"", stack:"" };
   window.__qual = qual;

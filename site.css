@@ -1774,16 +1774,42 @@ img{display:block;max-width:100%;height:auto}
 
 /* At the narrowest widths the brand, the menu and the call button stop fitting
    on one line, so the button keeps the arrow and drops its words. */
-@media (max-width:430px){
-  .nav{padding-left:16px;padding-right:8px;gap:6px}
-  /* "Book a call" and "Menu" do not both fit beside the wordmark on a small
-     phone, and the button was wrapping to three lines. The label shortens
-     rather than the type shrinking, so the arrow and tap target stay put. */
-  .cta-long{display:none}
-  .navtoggle{padding-left:4px;padding-right:2px;gap:7px}
+.callbar{display:none}   /* phones only; the media query below turns it on */
+
+/* ---------- phones: wordmark and menu only, the call sits at the bottom ----------
+   A wordmark, a menu and a call button need 325px of a 311px content box at
+   375px, so the button was rendering 6px outside its own pill. The call is too
+   important to shrink and the menu too important to hide, so the call leaves
+   the bar for a fixed strip at thumb height, which is easier to hit anyway. */
+@media (max-width:900px){
+  .nav{padding-left:18px;padding-right:10px;gap:10px}
+  .nav > .btn-lime{display:none}
+  .navtoggle{padding:0;width:44px;height:44px;justify-content:center;border-radius:12px}
+  .navtoggle-text{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+  .nav.open .navtoggle{background:var(--cream)}
+
+  .callbar{position:fixed;left:0;right:0;bottom:0;z-index:25;display:block;
+    padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+    background:color-mix(in srgb,var(--paper) 86%,transparent);
+    -webkit-backdrop-filter:saturate(1.4) blur(14px);backdrop-filter:saturate(1.4) blur(14px);
+    border-top:1px solid var(--line)}
+  .callbar .btn{width:100%;justify-content:space-between}
+  /* only once the hero's own button has gone; the class is added by JS, so
+     with no JS the strip is simply there from the start */
+  .callbar-auto{transform:translateY(130%);transition:transform .32s cubic-bezier(.2,.7,.2,1)}
+  .callbar-auto.callbar-up{transform:none}
+  /* so the last of the footer is not sitting under the strip */
+  body{padding-bottom:84px}
 }
 
-@media (prefers-reduced-motion:reduce){ .navtoggle-bars i{transition:none} }
+/* Browsers without color-mix still need an opaque strip rather than none. */
+@supports not (background:color-mix(in srgb,#fff 50%,transparent)){
+  @media (max-width:900px){ .callbar{background:var(--paper)} }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .navtoggle-bars i,.callbar-auto{transition:none}
+}
 
 /* Stated after the base rule above, which would otherwise win on source order
    and leave the button invisible on exactly the widths that need it. */
