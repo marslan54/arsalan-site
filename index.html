@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=80">
+<link rel="stylesheet" href="site.css?v=82">
 <script type="application/ld+json">{
  "@context": "https://schema.org",
  "@graph": [
@@ -449,83 +449,24 @@
   <div class="wrap">
     <div class="sec-head">
       <h2 class="h-lg">Three agents,<br>built end to end.</h2>
-      <p class="lede" style="margin:0">Three builds, and the part of each that was actually difficult. Each shows what the work cost before, what I built, the test results, and where a person stays in control. You can use all three yourself.</p>
+      <p class="lede" style="margin:0">Each is a real recorded run, with the test suite and eval set that produced the numbers beside the prices below. Watch one before you talk to me.</p>
     </div>
-
-    <div class="cases">
-
-      <article class="case">
-        <div class="case-top">
-          <span class="tag">Home services</span>
-          <span class="stack">Vapi</span><span class="stack">Twilio</span><span class="stack">Cal.com</span><span class="stack">Postgres</span>
-        </div>
-        <h3 class="h-sm">The agent can read a price. It can never compose one.</h3>
-        <div class="ba">
-          <div class="ba-col before"><span>Before</span><p>Calls after hours went to voicemail. Quotes depended on whoever picked up, and double-bookings were caught by hand. Every one of those callers had the next company's number already open.</p></div>
-          <div class="ba-arrow"><svg width="20" height="20"><use href="#arw"/></svg></div>
-          <div class="ba-col after"><span>Now</span><p>Ava answers every call, quotes from an approved price list, books into Cal.com and texts the confirmation.</p></div>
-        </div>
-        
-        <div class="stats">
-          <div class="stat"><b>29</b><span>tests, run offline</span></div>
-          <div class="stat"><b>0</b><span>double-bookings under load</span></div>
-          <div class="stat"><b>Real</b><span>Cal.com booking on the demo call</span></div>
-        </div>
-        <p class="control"><b>Where a person stays in control:</b> emergencies ring the on-call technician instead. Prices come only from the approved list, so Ava can't invent one.</p>
-        <div class="case-cta">
-          <a class="btn btn-lime" href="https://marslan54.github.io/voice-agent-demo" target="_blank" rel="noopener">Hear the call <i><svg><use href="#arw"/></svg></i></a>
-          <a class="btn btn-line" href="#contact" data-book data-pack="AI receptionist">Book a call about this <i><svg><use href="#arw"/></svg></i></a>
-        </div>
-      </article>
-
-      <article class="case">
-        <div class="case-top">
-          <span class="tag">Inbound leads</span>
-          <span class="stack">n8n</span><span class="stack">Twilio</span><span class="stack">HubSpot</span><span class="stack">DeepEval</span>
-        </div>
-        <h3 class="h-sm">Anything off-script stops and hands you the whole thread</h3>
-        <div class="ba">
-          <div class="ba-col before"><span>Before</span><p>Missed calls and form fills sat until someone had a free moment, often the next morning. The lead was paid for either way; the reply decided who got the job.</p></div>
-          <div class="ba-arrow"><svg width="20" height="20"><use href="#arw"/></svg></div>
-          <div class="ba-col after"><span>Now</span><p>A text goes out in seconds, qualifies the job, books it and writes the lead into the CRM.</p></div>
-        </div>
-        
-        <div class="stats">
-          <div class="stat"><b>150/150</b><span>checks passing</span></div>
-          <div class="stat"><b>23</b><span>scripted conversations graded</span></div>
-          <div class="stat"><b>Seconds</b><span>to first reply</span></div>
-        </div>
-        <p class="control"><b>Where a person stays in control:</b> anything outside the script stops and hands to you with the full thread, rather than guessing.</p>
-        <div class="case-cta">
-          <a class="btn btn-lime" href="https://marslan54.github.io/speed-to-lead-agent-demo" target="_blank" rel="noopener">Watch the thread <i><svg><use href="#arw"/></svg></i></a>
-          <a class="btn btn-line" href="#contact" data-book data-pack="Speed-to-lead">Book a call about this <i><svg><use href="#arw"/></svg></i></a>
-        </div>
-      </article>
-
-      <article class="case">
-        <div class="case-top">
-          <span class="tag">Agencies</span>
-          <span class="stack">n8n</span><span class="stack">Clay</span><span class="stack">Claude</span><span class="stack">GoHighLevel</span><span class="stack">Instantly</span>
-        </div>
-        <h3 class="h-sm">One reply has to stop five channels at once</h3>
-        <div class="ba">
-          <div class="ba-col before"><span>Before</span><p>Sequences kept sending after a prospect had already replied, and every client needed its own rebuild. Both of those land on the agency's name, not the tool's.</p></div>
-          <div class="ba-arrow"><svg width="20" height="20"><use href="#arw"/></svg></div>
-          <div class="ba-col after"><span>Now</span><p>Research, write, pass a QA gate, send. A reply stops every channel at once, and one engine runs many clients.</p></div>
-        </div>
-        
-        <div class="stats">
-          <div class="stat"><b>35/35</b><span>acceptance checks</span></div>
-          <div class="stat"><b>94/94</b><span>evals on real Claude</span></div>
-          <div class="stat"><b>0</b><span>sends after a reply</span></div>
-        </div>
-        <p class="control"><b>Where a person stays in control:</b> a QA gate blocks any email with a number or claim that isn't in the client's own proof, before it can send.</p>
-        <div class="case-cta">
-          <a class="btn btn-lime" href="https://marslan54.github.io/outbound-engine-demo" target="_blank" rel="noopener">See the run <i><svg><use href="#arw"/></svg></i></a>
-          <a class="btn btn-line" href="#contact" data-book data-pack="Outbound engine">Book a call about this <i><svg><use href="#arw"/></svg></i></a>
-        </div>
-      </article>
-
+    <div class="worklinks">
+      <a class="worklink" href="https://marslan54.github.io/voice-agent-demo" target="_blank" rel="noopener">
+        <span class="tag">Home services</span>
+        <b>The agent can read a price. It can never compose one.</b>
+        <span class="worklink-go">Hear the call <i><svg><use href="#arw"/></svg></i></span>
+      </a>
+      <a class="worklink" href="https://marslan54.github.io/speed-to-lead-agent-demo" target="_blank" rel="noopener">
+        <span class="tag">Inbound leads</span>
+        <b>Anything off-script stops and hands you the whole thread.</b>
+        <span class="worklink-go">Read the thread <i><svg><use href="#arw"/></svg></i></span>
+      </a>
+      <a class="worklink" href="https://marslan54.github.io/outbound-engine-demo" target="_blank" rel="noopener">
+        <span class="tag">Agencies</span>
+        <b>One reply has to stop five channels at once.</b>
+        <span class="worklink-go">See the board <i><svg><use href="#arw"/></svg></i></span>
+      </a>
     </div>
   </div>
 </section>
@@ -552,6 +493,7 @@
         <p>Answers your phone around the clock, quotes from your price list, books into your calendar and texts confirmations.</p>
         <div class="price"><b>$3,500</b><span>from</span></div>
         <p class="when">Live in 2 weeks</p>
+        <p class="pack-proof"><b>29</b> tests run offline &middot; <b>0</b> double-bookings under load &middot; a real Cal.com booking on the demo call</p>
         <details class="inc">
           <summary>What's included <i><svg><use href="#arw"/></svg></i></summary>
           <ul>
@@ -601,6 +543,7 @@
         <p>Every missed call and form fill answered by text in seconds, qualified, booked and written to your CRM.</p>
         <div class="price"><b>$2,000</b><span>from</span></div>
         <p class="when">Live in 1 week</p>
+        <p class="pack-proof"><b>150/150</b> checks passing &middot; <b>23</b> scripted conversations graded &middot; first reply in seconds</p>
         <details class="inc">
           <summary>What's included <i><svg><use href="#arw"/></svg></i></summary>
           <ul>
@@ -631,6 +574,7 @@
         <p>Research, personalised sequences behind a QA gate, and every channel stopping the moment someone replies.</p>
         <div class="price"><b>$6,000</b><span>from</span></div>
         <p class="when">Live in 3 to 4 weeks</p>
+        <p class="pack-proof"><b>35/35</b> acceptance checks &middot; <b>94/94</b> evals on real Claude &middot; <b>0</b> sends after a reply</p>
         <details class="inc">
           <summary>What's included <i><svg><use href="#arw"/></svg></i></summary>
           <ul>
