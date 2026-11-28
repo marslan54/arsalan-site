@@ -169,25 +169,6 @@ const CONFIG = {
   syncBook();
 })();
 
-/* How it runs: one pipeline per case, stepped through by the reader. */
-document.querySelectorAll('[data-flow]').forEach(flow => {
-  const tabs   = [...flow.querySelectorAll('.flow-rail button')];
-  const panels = [...flow.querySelectorAll('.flow-p')];
-  function go(i){
-    tabs.forEach((t, n) => t.setAttribute('aria-selected', String(n === i)));
-    panels.forEach((p, n) => p.classList.toggle('on', n === i));
-  }
-  tabs.forEach((t, i) => {
-    t.addEventListener('click', () => go(i));
-    t.addEventListener('keydown', e => {
-      const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
-      if (!d) return;
-      e.preventDefault();
-      const n = (i + d + tabs.length) % tabs.length;
-      tabs[n].focus(); go(n);
-    });
-  });
-});
 
 /* The measured numbers count up the first time they come into view. */
 (function(){
